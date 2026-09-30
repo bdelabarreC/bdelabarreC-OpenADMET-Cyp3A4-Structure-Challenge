@@ -31,34 +31,34 @@ Much of this workflow was developed in the previous (PXR) challenge but not expl
 
 File description:
 
-Notebooks / scripts
-run_openfold_githubsafe.txt <how I execute an openfold run>
-structure_prediction.ipynb <jupyter notebook for processing post OF3 run>
-structure_refinement.ipynb <jupyter notebook for further processing via OpenMM>
+### Notebooks & Scripts
+* `run_openfold_githubsafe.txt` - How I execute an OpenFold run
+* `structure_prediction.ipynb` - Jupyter notebook for processing post-OF3 run
+* `structure_refinement.ipynb` - Jupyter notebook for further processing via OpenMM
 
-Data files:
-cyp3a4_A.npz <alignment file for input to OF3>                
-cyp3a_PDB_2026.xlsx <current list of human CYP3A4 files in the pdb - via Uniprot lookup>         
-cyp3a4_pdb_summary.csv <more detailed information on PDB cyp3a4 structures>       
-validation.py <presubmission validation file provided by OpenADMET>
-cyp3a4_challenge_vs_pdb.csv <comparison of PDB ligands to the current OpenADMET challenge set>  
-cyp_challenge_compound.csv  <openADMET challenge compounds>
-openadmet20_query_cyp3A4_githubsafe.json  <.json file for running OF3>
+### Data Files
+* `cyp3a4_A.npz` - Alignment file for input to OF3
+* `cyp3a_PDB_2026.xlsx` - Current list of human CYP3A4 files in the PDB (via UniProt lookup)
+* `cyp3a4_pdb_summary.csv` - Detailed information on PDB CYP3A4 structures
+* `validation.py` - Presubmission validation file provided by OpenADMET
+* `cyp3a4_challenge_vs_pdb.csv` - Comparison of PDB ligands to the current OpenADMET challenge set
+* `cyp_challenge_compound.csv` - OpenADMET challenge compounds
+* `openadmet20_query_cyp3A4_githubsafe.json` - JSON file for running OF3
 
-Auxilliary files: 
-dotenv_example_forgithub <example of a .env file>    
-LICENSE <GNU license file>                                   
-README.md <this file>                    
+### Auxiliary Files
+* `dotenv_example_forgithub` - Example of a `.env` file structure
+* `LICENSE` - GNU license file
+* `README.md` - This file               
 
 
 
 Results update as of this upload:
-2 submissions:
-Rank	Username	Submitted   LDDT-PLI	LDDT-LP	BiSyRMSD    Coverage    Run #	Note
 
-8	    TCB	        2026-09-29  ~0.27						    1           1(A)	Direct openfold output best of 4x (7 entries failed QC)
-5	    TCB	        2026-09-30  0.3506	    5.5842	0.5916	    1		    1(C)    Output from run 1 put through light OpenMM minimization 
 
+| Rank | Username | Submitted | LDDT-PLI | LDDT-LP | BiSyRMSD | Coverage | Run # | Note |
+|---|---|---|---|---|---|---|---|---|
+| 8 | TCB | 2026-09-29 | ~0.27 | - | - | 1 | 1(A) | Direct openfold output best of 4x (7 entries failed QC) |
+| 5 | TCB | 2026-09-30 | 0.3506 | 5.5842 | 0.5916 | 1 | 1(C) | Output from run 1 put through light OpenMM minimization |
 
 Next steps - an expanded run of 20 poses per compound showed that OF3 is predicting ligand positions within a very narrow range.
 Although I had hoped that using the latest .pt file from OF3 would give a wider range of possibilities, it may be necessary to select
