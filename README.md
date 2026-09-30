@@ -19,17 +19,21 @@ Post-folding scoring exploration to focus on:
 
 QC checks will be as PoseBusters as before (now an official check in the competition).  Visual inspection will be feasible with only 20 structures.
 
-Update:
 
-I have decided to open source my work flows during the competition.  
-Feel free to use as you wish - I put a GNU general public license on everything.
-I am building upon the opensource efforts of many other people - I will generate a complete list eventually.  For now it will be apparent by perusing the dependencies in the Jupyter notebooks.
-My directory structures are protected through use of a .env file that will not be uploaded, but an example of how to format one will be.
-If you wish to use this - you will have to fill in your own variables or use the dotenv module along with your own .env file
+I have decided to open source my work flows during the competition. 
+
+Feel free to use as you wish within the restrictions of the GNU license.
+
+Much of this workflow was developed in the previous (PXR) challenge but not explicitly shared there - consider this the update to that effort as well.
+
+I am also building upon the opensource efforts of many other people - I will generate a complete list eventually.  For now it will be apparent by perusing the dependencies in the Jupyter notebooks included here.
+
+My local information (directories, usernames, etc) is protected through use of a .env file that will not be uploaded, but an example of how to format one will be.
+
 In some cases I have generated 'githubsafe' versions of files where I have removed directory structures so that your own can be placed there.
-Much of this workflow was developed in the previous (PXR) challenge but not explicitely shared there - consider this the update to that effort as well.
 
-File description:
+
+File descriptions (work in progress):
 
 ### Notebooks & Scripts
 * `run_openfold_githubsafe.txt` - How I execute an OpenFold run
@@ -52,7 +56,7 @@ File description:
 
 
 
-Results update as of this upload:
+Competition update for my entries as of this upload:
 
 
 | Rank | Username | Submitted | LDDT-PLI | LDDT-LP | BiSyRMSD | Coverage | Run # | Note |
