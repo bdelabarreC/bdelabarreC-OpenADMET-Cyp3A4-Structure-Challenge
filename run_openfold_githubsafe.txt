@@ -1,0 +1,13 @@
+WORK=<pathto where inputs should be and output should go>
+CHECKPTS=<path to openfold3 .pt file (weights)>
+# One may convert this to a python or bash type script - I usually just copy and paste into terminal
+pixi run -e openfold3-cuda13 run_openfold predict \
+  --query-json $WORK/openadmet20_query_cyp3A4.json \
+  --inference-ckpt-path $CHECKPTS/of3-ob-2025-06-30-174k.pt \  # this file can be downloaded by pulling the latests Openfold3 from github
+  --use-msa-server false --use-templates false --num-diffusion-samples 4 \
+  --num-model-seeds 5 \
+  --output-dir $WORK/<path to model output, eg. cyp_predictions/openadmet20_run2>  &> $WORK/<captures errors for later review, e.g. of3_output_run2.txt>
+
+
+  #running 5 or greater diffusion samples on my 16Gb Nvidia 4070 card gave a memory error.  
+  #Memory hit 75% with 4 - completes so longs as nothing else is using GPU.  

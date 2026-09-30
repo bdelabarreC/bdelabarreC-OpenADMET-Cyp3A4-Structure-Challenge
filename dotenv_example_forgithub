@@ -1,0 +1,22 @@
+SUBMISSION_DIR="<filepath for output before zipping>"
+CHALLENGE_CSV="<filepath to>/cyp_challenge_compound.csv"
+EXTRACT_DIR="<filepath for posebusters extracted files>"
+OUT_CSV="<filepath for posebusters results>/cyp3a4_posebusters_results.csv"
+
+HARVEST_INPUT_DIR   = "<top of filepath for OF3 models>"
+
+
+cif_dir = "<filepath for harvested top structures>"
+submission_output_dir = "<filepath for OF3 top structure submission ready>"
+
+processed_submission_dir = "<filepath for postOF3 eg. minimized files>"
+zip_path = "<filepath for zipped submission>/filename.zip"
+
+username="<hugging face username"
+user_alias="=" # Replace if anonymous
+participant_name="<participant name>"
+discord_username="<discord username>"
+email="<email address>"
+affiliation="<affiliation>"
+model_tag="<html address for sharing results (usually github distro format)>"
+

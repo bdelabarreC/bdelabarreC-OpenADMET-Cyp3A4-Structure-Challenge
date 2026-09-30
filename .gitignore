@@ -1,0 +1,17 @@
+# 1. Security (CRITICAL)
+.env
+.env.*
+
+# 2. Specific Folders to Hide
+# Add a trailing slash (/) to ignore an entire directory and everything inside it
+data/
+openfold_work/
+cyp3a4_structures/
+
+# 3. File Extensions to Hide (Prevents uploading massive data files)
+
+# 4. Jupyter & Python System Files (Keeps your repo clean)
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+

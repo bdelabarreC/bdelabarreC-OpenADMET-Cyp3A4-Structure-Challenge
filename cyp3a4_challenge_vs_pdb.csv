@@ -1,0 +1,21 @@
+compound,smiles,exact_match,same_connectivity,same_scaffold,nearest_code,nearest_name,nearest_tanimoto,nearest_pdb_ids,top_hits,risk
+cmpd_0,CC(C)(C)NS(=O)(=O)C1(CNc2c(Br)cncc2C#N)CCC1,,,,PK9,tert-butyl {6-oxo-6-[(pyridin-3-ylmethyl)amino]hexyl}carbama,0.167,4D6Z;4D75,PK9:0.17; D7M:0.14; MYT:0.14,NOVEL
+cmpd_1,Cc1cccc2c1N(C(=O)CCn1cncn1)CCC2,,,,TPF,"2-(2,4-DIFLUOROPHENYL)-1,3-DI(1H-1,2,4-TRIAZOL-1-YL)PROPAN-2",0.266,6MA7,TPF:0.27; A1AST:0.19; A1CIW:0.17,NOVEL
+cmpd_2,Cc1ccc(S(=O)(=O)N(C)Cc2ccccc2N2CCOCC2)cc1C,,,,A1APA,cobicistat,0.176,9BBB,A1APA:0.18; PMF:0.16; A1CIW:0.15,NOVEL
+cmpd_3,CCCn1cc(C(=O)N2CCN(C3CC3)c3c(C)cccc32)nn1,,,,UC7,"2-butyl-6-(butylamino)-1H-benzo[de]isoquinoline-1,3(2H)-dion",0.184,8DYC,UC7:0.18; 08Y:0.17; A1CIW:0.17,NOVEL
+cmpd_4,O=C1CCCN1c1ccc(S(=O)(=O)Nc2cccc(O)c2)cc1,,,,A1BNX,N'-(2-chlorophenyl)-N-[(3-hydroxyphenyl)methyl]-N-[(2P)-2-(1,0.154,9MS1,A1BNX:0.15; A1ASO:0.15; A1A4U:0.14,NOVEL
+cmpd_5,CC(C)(C)NS(=O)(=O)C1(CNc2ccncc2C#N)CC1,,,,PK9,tert-butyl {6-oxo-6-[(pyridin-3-ylmethyl)amino]hexyl}carbama,0.219,4D6Z;4D75,PK9:0.22; MYT:0.20; G0D:0.20,NOVEL
+cmpd_6,COc1cccc(C2(C(=O)NCCn3cnc4ccccc43)CC2)c1,,,,MWV,"(1S,2S)-2-(2-{[3-(1H-benzimidazol-2-yl)propyl](methyl)amino}",0.19,6OO9,MWV:0.19; PK9:0.17; X0E:0.17,NOVEL
+cmpd_7,Cc1cccc(C(=O)NC(C)c2cccnc2)c1,,,,MYT,METYRAPONE,0.34,1W0G;6MA6,MYT:0.34; NXR:0.30; A1A4K:0.28,NOVEL
+cmpd_8,Cc1ccc(S(=O)(=O)Nc2cccc(O)c2)c(C)c1,,,,A1BNX,N'-(2-chlorophenyl)-N-[(3-hydroxyphenyl)methyl]-N-[(2P)-2-(1,0.155,9MS1,A1BNX:0.15; A1ASO:0.15; PMF:0.15,NOVEL
+cmpd_9,CC(C)(C)NS(=O)(=O)C1(CNc2ccncc2C#N)CCC1,,,,PK9,tert-butyl {6-oxo-6-[(pyridin-3-ylmethyl)amino]hexyl}carbama,0.213,4D6Z;4D75,PK9:0.21; D7M:0.20; MYT:0.19,NOVEL
+cmpd_10,O=C(NCC1CCc2ccccc21)c1ccnc(-n2ccnc2)c1,,,,A1ASS,N-[(2P)-2-(1H-imidazol-1-yl)-5-(trifluoromethyl)phenyl]cyclo,0.307,9BV8,A1ASS:0.31; A1ASP:0.27; A1ASV:0.27,NOVEL
+cmpd_11,COc1ccccc1-c1cn(CCc2cncn2C)nn1,,,,A1ASU,"5-(4-methoxyphenyl)-1-[4-(2-methyl-1,3-thiazol-4-yl)phenyl]-",0.183,9BV6,A1ASU:0.18; 08J:0.18; 2QH:0.17,NOVEL
+cmpd_12,C[C@H]1CC[C@H](NC(=O)c2ccccc2SCc2cccnc2)CC1,,,,D7M,tert-butyl (2-{[(2R)-2-(cyclopentylamino)-3-oxo-3-{[(pyridin,0.329,6BD5,D7M:0.33; X71:0.31; D81:0.30,NOVEL
+cmpd_13,CCc1[nH]ccc1C(=O)Nc1ccc(-n2ccnc2)cc1,,,,A1ASV,"N-[(2P)-2-(1H-imidazol-1-yl)-5-(trifluoromethyl)phenyl]-2,2-",0.308,9BV5,A1ASV:0.31; A1ASS:0.27; A1ASP:0.27,NOVEL
+cmpd_14,NS(=O)(=O)Cc1cccc(C(=O)N2CCCCCc3ccccc32)c1,,,,PMF,phenylmethylsulfonyl fluoride,0.226,6MA8,PMF:0.23; A1CIW:0.23; A1BNX:0.18,NOVEL
+cmpd_15,CN(C)C(=O)N1CCC(C(=O)N2CCN(C3CC3)c3ccccc32)CC1,,,,A1CIW,darifenacin,0.177,9PLK,A1CIW:0.18; 08J:0.16; A1ASS:0.16,NOVEL
+cmpd_16,O=S(=O)(Nc1cccc2c1CCN2)c1sccc1C1CC1,,,,A1A4U,(2R)-2-{[(2S)-2-(benzenesulfonamido)-3-phenylpropyl]sulfanyl,0.125,9COU,A1A4U:0.12; A1ASS:0.12; A1AST:0.12,NOVEL
+cmpd_17,O=C(c1cccc(Cn2ccnc2)c1)N(Cc1ccccc1F)C1CC1,,,,A1ASP,2-(2-chlorophenyl)-N-[(2P)-2-(1H-imidazol-1-yl)-5-(trifluoro,0.284,9BVB,A1ASP:0.28; A1BNX:0.27; A1ASO:0.27,NOVEL
+cmpd_18,CCOc1ccc(NS(=O)(=O)c2ccc(C)cc2C)cc1S(=O)(=O)N(C)C,,,,PMF,phenylmethylsulfonyl fluoride,0.125,6MA8,PMF:0.12; DEV:0.12; QES:0.12,NOVEL
+cmpd_19,O=C1Cc2cc(CCCC(=O)N3CCC3c3ccc(F)c(F)c3)ccc2N1,,,,A1CIW,darifenacin,0.221,9PLK,A1CIW:0.22; X1O:0.16; MWV:0.16,NOVEL

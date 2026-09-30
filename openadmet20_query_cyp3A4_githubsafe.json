@@ -1,0 +1,667 @@
+{
+  "seeds": [
+    42, 65, 10, 23, 35
+  ],
+  "queries": {
+    "cmpd_0": {
+      "chains": [
+        {
+          "molecule_type": "protein",
+          "chain_ids": [
+            "A"
+          ],
+          "sequence": "MALIPDLAMETWLLLAVSLVLLYLYGTHSHGLFKKLGIPGPTPLPFLGNILSYHKGFCMFDMECHKKYGKVWGFYDGQQPVLAITDPDMIKTVLVKECYSVFTNRRPFGPVGFMKSAISIAEDEEWKRLRSLLSPTFTSGKLKEMVPIIAQYGDVLVRNLRREAETGKPVTLKDVFGAYSMDVITSTSFGVNIDSLNNPQDPFVENTKKLLRFDFLDPFFLSITVFPFLIPILEVLNICVFPREVTNFLRKSVKRMKESRLEDTQKHRVDFLQLMIDSQNSKETESHKALSDLELVAQSIIFIFAGYETTSSVLSFIMYELATHPDVQQKLQEEIDAVLPNKAPPTYDTVLQMEYLDMVVNETLRLFPIAMRLERVCKKDVEINGMFIPKGVVVMIPSYALHRDPKYWTEPEKFLPERFSKKNKDNIDPYIYTPFGSGPRNCIGMRFALMNMKLALIRVLQNFSFKPCKETQIPLKLSLGGLLQPEKPVVLKVESRDGTVSGA",
+          "main_msa_file_paths": [
+            "<pathto>/cyp3a4_A.npz"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "B"
+          ],
+          "ccd_codes": [
+            "HEM"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "C"
+          ],
+          "smiles": "CC(C)(C)NS(=O)(=O)C1(CNc2c(Br)cncc2C#N)CCC1"
+        }
+      ],
+      "use_msas": true,
+      "use_main_msas": true,
+      "use_paired_msas": false
+    },
+    "cmpd_1": {
+      "chains": [
+        {
+          "molecule_type": "protein",
+          "chain_ids": [
+            "A"
+          ],
+          "sequence": "MALIPDLAMETWLLLAVSLVLLYLYGTHSHGLFKKLGIPGPTPLPFLGNILSYHKGFCMFDMECHKKYGKVWGFYDGQQPVLAITDPDMIKTVLVKECYSVFTNRRPFGPVGFMKSAISIAEDEEWKRLRSLLSPTFTSGKLKEMVPIIAQYGDVLVRNLRREAETGKPVTLKDVFGAYSMDVITSTSFGVNIDSLNNPQDPFVENTKKLLRFDFLDPFFLSITVFPFLIPILEVLNICVFPREVTNFLRKSVKRMKESRLEDTQKHRVDFLQLMIDSQNSKETESHKALSDLELVAQSIIFIFAGYETTSSVLSFIMYELATHPDVQQKLQEEIDAVLPNKAPPTYDTVLQMEYLDMVVNETLRLFPIAMRLERVCKKDVEINGMFIPKGVVVMIPSYALHRDPKYWTEPEKFLPERFSKKNKDNIDPYIYTPFGSGPRNCIGMRFALMNMKLALIRVLQNFSFKPCKETQIPLKLSLGGLLQPEKPVVLKVESRDGTVSGA",
+          "main_msa_file_paths": [
+            "<pathto>/cyp3a4_A.npz"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "B"
+          ],
+          "ccd_codes": [
+            "HEM"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "C"
+          ],
+          "smiles": "Cc1cccc2c1N(C(=O)CCn1cncn1)CCC2"
+        }
+      ],
+      "use_msas": true,
+      "use_main_msas": true,
+      "use_paired_msas": false
+    },
+    "cmpd_2": {
+      "chains": [
+        {
+          "molecule_type": "protein",
+          "chain_ids": [
+            "A"
+          ],
+          "sequence": "MALIPDLAMETWLLLAVSLVLLYLYGTHSHGLFKKLGIPGPTPLPFLGNILSYHKGFCMFDMECHKKYGKVWGFYDGQQPVLAITDPDMIKTVLVKECYSVFTNRRPFGPVGFMKSAISIAEDEEWKRLRSLLSPTFTSGKLKEMVPIIAQYGDVLVRNLRREAETGKPVTLKDVFGAYSMDVITSTSFGVNIDSLNNPQDPFVENTKKLLRFDFLDPFFLSITVFPFLIPILEVLNICVFPREVTNFLRKSVKRMKESRLEDTQKHRVDFLQLMIDSQNSKETESHKALSDLELVAQSIIFIFAGYETTSSVLSFIMYELATHPDVQQKLQEEIDAVLPNKAPPTYDTVLQMEYLDMVVNETLRLFPIAMRLERVCKKDVEINGMFIPKGVVVMIPSYALHRDPKYWTEPEKFLPERFSKKNKDNIDPYIYTPFGSGPRNCIGMRFALMNMKLALIRVLQNFSFKPCKETQIPLKLSLGGLLQPEKPVVLKVESRDGTVSGA",
+          "main_msa_file_paths": [
+            "<pathto>/cyp3a4_A.npz"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "B"
+          ],
+          "ccd_codes": [
+            "HEM"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "C"
+          ],
+          "smiles": "Cc1ccc(S(=O)(=O)N(C)Cc2ccccc2N2CCOCC2)cc1C"
+        }
+      ],
+      "use_msas": true,
+      "use_main_msas": true,
+      "use_paired_msas": false
+    },
+    "cmpd_3": {
+      "chains": [
+        {
+          "molecule_type": "protein",
+          "chain_ids": [
+            "A"
+          ],
+          "sequence": "MALIPDLAMETWLLLAVSLVLLYLYGTHSHGLFKKLGIPGPTPLPFLGNILSYHKGFCMFDMECHKKYGKVWGFYDGQQPVLAITDPDMIKTVLVKECYSVFTNRRPFGPVGFMKSAISIAEDEEWKRLRSLLSPTFTSGKLKEMVPIIAQYGDVLVRNLRREAETGKPVTLKDVFGAYSMDVITSTSFGVNIDSLNNPQDPFVENTKKLLRFDFLDPFFLSITVFPFLIPILEVLNICVFPREVTNFLRKSVKRMKESRLEDTQKHRVDFLQLMIDSQNSKETESHKALSDLELVAQSIIFIFAGYETTSSVLSFIMYELATHPDVQQKLQEEIDAVLPNKAPPTYDTVLQMEYLDMVVNETLRLFPIAMRLERVCKKDVEINGMFIPKGVVVMIPSYALHRDPKYWTEPEKFLPERFSKKNKDNIDPYIYTPFGSGPRNCIGMRFALMNMKLALIRVLQNFSFKPCKETQIPLKLSLGGLLQPEKPVVLKVESRDGTVSGA",
+          "main_msa_file_paths": [
+            "<pathto>/cyp3a4_A.npz"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "B"
+          ],
+          "ccd_codes": [
+            "HEM"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "C"
+          ],
+          "smiles": "CCCn1cc(C(=O)N2CCN(C3CC3)c3c(C)cccc32)nn1"
+        }
+      ],
+      "use_msas": true,
+      "use_main_msas": true,
+      "use_paired_msas": false
+    },
+    "cmpd_4": {
+      "chains": [
+        {
+          "molecule_type": "protein",
+          "chain_ids": [
+            "A"
+          ],
+          "sequence": "MALIPDLAMETWLLLAVSLVLLYLYGTHSHGLFKKLGIPGPTPLPFLGNILSYHKGFCMFDMECHKKYGKVWGFYDGQQPVLAITDPDMIKTVLVKECYSVFTNRRPFGPVGFMKSAISIAEDEEWKRLRSLLSPTFTSGKLKEMVPIIAQYGDVLVRNLRREAETGKPVTLKDVFGAYSMDVITSTSFGVNIDSLNNPQDPFVENTKKLLRFDFLDPFFLSITVFPFLIPILEVLNICVFPREVTNFLRKSVKRMKESRLEDTQKHRVDFLQLMIDSQNSKETESHKALSDLELVAQSIIFIFAGYETTSSVLSFIMYELATHPDVQQKLQEEIDAVLPNKAPPTYDTVLQMEYLDMVVNETLRLFPIAMRLERVCKKDVEINGMFIPKGVVVMIPSYALHRDPKYWTEPEKFLPERFSKKNKDNIDPYIYTPFGSGPRNCIGMRFALMNMKLALIRVLQNFSFKPCKETQIPLKLSLGGLLQPEKPVVLKVESRDGTVSGA",
+          "main_msa_file_paths": [
+            "<pathto>/cyp3a4_A.npz"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "B"
+          ],
+          "ccd_codes": [
+            "HEM"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "C"
+          ],
+          "smiles": "O=C1CCCN1c1ccc(S(=O)(=O)Nc2cccc(O)c2)cc1"
+        }
+      ],
+      "use_msas": true,
+      "use_main_msas": true,
+      "use_paired_msas": false
+    },
+    "cmpd_5": {
+      "chains": [
+        {
+          "molecule_type": "protein",
+          "chain_ids": [
+            "A"
+          ],
+          "sequence": "MALIPDLAMETWLLLAVSLVLLYLYGTHSHGLFKKLGIPGPTPLPFLGNILSYHKGFCMFDMECHKKYGKVWGFYDGQQPVLAITDPDMIKTVLVKECYSVFTNRRPFGPVGFMKSAISIAEDEEWKRLRSLLSPTFTSGKLKEMVPIIAQYGDVLVRNLRREAETGKPVTLKDVFGAYSMDVITSTSFGVNIDSLNNPQDPFVENTKKLLRFDFLDPFFLSITVFPFLIPILEVLNICVFPREVTNFLRKSVKRMKESRLEDTQKHRVDFLQLMIDSQNSKETESHKALSDLELVAQSIIFIFAGYETTSSVLSFIMYELATHPDVQQKLQEEIDAVLPNKAPPTYDTVLQMEYLDMVVNETLRLFPIAMRLERVCKKDVEINGMFIPKGVVVMIPSYALHRDPKYWTEPEKFLPERFSKKNKDNIDPYIYTPFGSGPRNCIGMRFALMNMKLALIRVLQNFSFKPCKETQIPLKLSLGGLLQPEKPVVLKVESRDGTVSGA",
+          "main_msa_file_paths": [
+            "<pathto>/cyp3a4_A.npz"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "B"
+          ],
+          "ccd_codes": [
+            "HEM"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "C"
+          ],
+          "smiles": "CC(C)(C)NS(=O)(=O)C1(CNc2ccncc2C#N)CC1"
+        }
+      ],
+      "use_msas": true,
+      "use_main_msas": true,
+      "use_paired_msas": false
+    },
+    "cmpd_6": {
+      "chains": [
+        {
+          "molecule_type": "protein",
+          "chain_ids": [
+            "A"
+          ],
+          "sequence": "MALIPDLAMETWLLLAVSLVLLYLYGTHSHGLFKKLGIPGPTPLPFLGNILSYHKGFCMFDMECHKKYGKVWGFYDGQQPVLAITDPDMIKTVLVKECYSVFTNRRPFGPVGFMKSAISIAEDEEWKRLRSLLSPTFTSGKLKEMVPIIAQYGDVLVRNLRREAETGKPVTLKDVFGAYSMDVITSTSFGVNIDSLNNPQDPFVENTKKLLRFDFLDPFFLSITVFPFLIPILEVLNICVFPREVTNFLRKSVKRMKESRLEDTQKHRVDFLQLMIDSQNSKETESHKALSDLELVAQSIIFIFAGYETTSSVLSFIMYELATHPDVQQKLQEEIDAVLPNKAPPTYDTVLQMEYLDMVVNETLRLFPIAMRLERVCKKDVEINGMFIPKGVVVMIPSYALHRDPKYWTEPEKFLPERFSKKNKDNIDPYIYTPFGSGPRNCIGMRFALMNMKLALIRVLQNFSFKPCKETQIPLKLSLGGLLQPEKPVVLKVESRDGTVSGA",
+          "main_msa_file_paths": [
+            "<pathto>/cyp3a4_A.npz"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "B"
+          ],
+          "ccd_codes": [
+            "HEM"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "C"
+          ],
+          "smiles": "COc1cccc(C2(C(=O)NCCn3cnc4ccccc43)CC2)c1"
+        }
+      ],
+      "use_msas": true,
+      "use_main_msas": true,
+      "use_paired_msas": false
+    },
+    "cmpd_7": {
+      "chains": [
+        {
+          "molecule_type": "protein",
+          "chain_ids": [
+            "A"
+          ],
+          "sequence": "MALIPDLAMETWLLLAVSLVLLYLYGTHSHGLFKKLGIPGPTPLPFLGNILSYHKGFCMFDMECHKKYGKVWGFYDGQQPVLAITDPDMIKTVLVKECYSVFTNRRPFGPVGFMKSAISIAEDEEWKRLRSLLSPTFTSGKLKEMVPIIAQYGDVLVRNLRREAETGKPVTLKDVFGAYSMDVITSTSFGVNIDSLNNPQDPFVENTKKLLRFDFLDPFFLSITVFPFLIPILEVLNICVFPREVTNFLRKSVKRMKESRLEDTQKHRVDFLQLMIDSQNSKETESHKALSDLELVAQSIIFIFAGYETTSSVLSFIMYELATHPDVQQKLQEEIDAVLPNKAPPTYDTVLQMEYLDMVVNETLRLFPIAMRLERVCKKDVEINGMFIPKGVVVMIPSYALHRDPKYWTEPEKFLPERFSKKNKDNIDPYIYTPFGSGPRNCIGMRFALMNMKLALIRVLQNFSFKPCKETQIPLKLSLGGLLQPEKPVVLKVESRDGTVSGA",
+          "main_msa_file_paths": [
+            "<pathto>/cyp3a4_A.npz"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "B"
+          ],
+          "ccd_codes": [
+            "HEM"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "C"
+          ],
+          "smiles": "Cc1cccc(C(=O)NC(C)c2cccnc2)c1"
+        }
+      ],
+      "use_msas": true,
+      "use_main_msas": true,
+      "use_paired_msas": false
+    },
+    "cmpd_8": {
+      "chains": [
+        {
+          "molecule_type": "protein",
+          "chain_ids": [
+            "A"
+          ],
+          "sequence": "MALIPDLAMETWLLLAVSLVLLYLYGTHSHGLFKKLGIPGPTPLPFLGNILSYHKGFCMFDMECHKKYGKVWGFYDGQQPVLAITDPDMIKTVLVKECYSVFTNRRPFGPVGFMKSAISIAEDEEWKRLRSLLSPTFTSGKLKEMVPIIAQYGDVLVRNLRREAETGKPVTLKDVFGAYSMDVITSTSFGVNIDSLNNPQDPFVENTKKLLRFDFLDPFFLSITVFPFLIPILEVLNICVFPREVTNFLRKSVKRMKESRLEDTQKHRVDFLQLMIDSQNSKETESHKALSDLELVAQSIIFIFAGYETTSSVLSFIMYELATHPDVQQKLQEEIDAVLPNKAPPTYDTVLQMEYLDMVVNETLRLFPIAMRLERVCKKDVEINGMFIPKGVVVMIPSYALHRDPKYWTEPEKFLPERFSKKNKDNIDPYIYTPFGSGPRNCIGMRFALMNMKLALIRVLQNFSFKPCKETQIPLKLSLGGLLQPEKPVVLKVESRDGTVSGA",
+          "main_msa_file_paths": [
+            "<pathto>/cyp3a4_A.npz"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "B"
+          ],
+          "ccd_codes": [
+            "HEM"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "C"
+          ],
+          "smiles": "Cc1ccc(S(=O)(=O)Nc2cccc(O)c2)c(C)c1"
+        }
+      ],
+      "use_msas": true,
+      "use_main_msas": true,
+      "use_paired_msas": false
+    },
+    "cmpd_9": {
+      "chains": [
+        {
+          "molecule_type": "protein",
+          "chain_ids": [
+            "A"
+          ],
+          "sequence": "MALIPDLAMETWLLLAVSLVLLYLYGTHSHGLFKKLGIPGPTPLPFLGNILSYHKGFCMFDMECHKKYGKVWGFYDGQQPVLAITDPDMIKTVLVKECYSVFTNRRPFGPVGFMKSAISIAEDEEWKRLRSLLSPTFTSGKLKEMVPIIAQYGDVLVRNLRREAETGKPVTLKDVFGAYSMDVITSTSFGVNIDSLNNPQDPFVENTKKLLRFDFLDPFFLSITVFPFLIPILEVLNICVFPREVTNFLRKSVKRMKESRLEDTQKHRVDFLQLMIDSQNSKETESHKALSDLELVAQSIIFIFAGYETTSSVLSFIMYELATHPDVQQKLQEEIDAVLPNKAPPTYDTVLQMEYLDMVVNETLRLFPIAMRLERVCKKDVEINGMFIPKGVVVMIPSYALHRDPKYWTEPEKFLPERFSKKNKDNIDPYIYTPFGSGPRNCIGMRFALMNMKLALIRVLQNFSFKPCKETQIPLKLSLGGLLQPEKPVVLKVESRDGTVSGA",
+          "main_msa_file_paths": [
+            "<pathto>/cyp3a4_A.npz"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "B"
+          ],
+          "ccd_codes": [
+            "HEM"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "C"
+          ],
+          "smiles": "CC(C)(C)NS(=O)(=O)C1(CNc2ccncc2C#N)CCC1"
+        }
+      ],
+      "use_msas": true,
+      "use_main_msas": true,
+      "use_paired_msas": false
+    },
+    "cmpd_10": {
+      "chains": [
+        {
+          "molecule_type": "protein",
+          "chain_ids": [
+            "A"
+          ],
+          "sequence": "MALIPDLAMETWLLLAVSLVLLYLYGTHSHGLFKKLGIPGPTPLPFLGNILSYHKGFCMFDMECHKKYGKVWGFYDGQQPVLAITDPDMIKTVLVKECYSVFTNRRPFGPVGFMKSAISIAEDEEWKRLRSLLSPTFTSGKLKEMVPIIAQYGDVLVRNLRREAETGKPVTLKDVFGAYSMDVITSTSFGVNIDSLNNPQDPFVENTKKLLRFDFLDPFFLSITVFPFLIPILEVLNICVFPREVTNFLRKSVKRMKESRLEDTQKHRVDFLQLMIDSQNSKETESHKALSDLELVAQSIIFIFAGYETTSSVLSFIMYELATHPDVQQKLQEEIDAVLPNKAPPTYDTVLQMEYLDMVVNETLRLFPIAMRLERVCKKDVEINGMFIPKGVVVMIPSYALHRDPKYWTEPEKFLPERFSKKNKDNIDPYIYTPFGSGPRNCIGMRFALMNMKLALIRVLQNFSFKPCKETQIPLKLSLGGLLQPEKPVVLKVESRDGTVSGA",
+          "main_msa_file_paths": [
+            "<pathto>/cyp3a4_A.npz"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "B"
+          ],
+          "ccd_codes": [
+            "HEM"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "C"
+          ],
+          "smiles": "O=C(NCC1CCc2ccccc21)c1ccnc(-n2ccnc2)c1"
+        }
+      ],
+      "use_msas": true,
+      "use_main_msas": true,
+      "use_paired_msas": false
+    },
+    "cmpd_11": {
+      "chains": [
+        {
+          "molecule_type": "protein",
+          "chain_ids": [
+            "A"
+          ],
+          "sequence": "MALIPDLAMETWLLLAVSLVLLYLYGTHSHGLFKKLGIPGPTPLPFLGNILSYHKGFCMFDMECHKKYGKVWGFYDGQQPVLAITDPDMIKTVLVKECYSVFTNRRPFGPVGFMKSAISIAEDEEWKRLRSLLSPTFTSGKLKEMVPIIAQYGDVLVRNLRREAETGKPVTLKDVFGAYSMDVITSTSFGVNIDSLNNPQDPFVENTKKLLRFDFLDPFFLSITVFPFLIPILEVLNICVFPREVTNFLRKSVKRMKESRLEDTQKHRVDFLQLMIDSQNSKETESHKALSDLELVAQSIIFIFAGYETTSSVLSFIMYELATHPDVQQKLQEEIDAVLPNKAPPTYDTVLQMEYLDMVVNETLRLFPIAMRLERVCKKDVEINGMFIPKGVVVMIPSYALHRDPKYWTEPEKFLPERFSKKNKDNIDPYIYTPFGSGPRNCIGMRFALMNMKLALIRVLQNFSFKPCKETQIPLKLSLGGLLQPEKPVVLKVESRDGTVSGA",
+          "main_msa_file_paths": [
+            "<pathto>/cyp3a4_A.npz"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "B"
+          ],
+          "ccd_codes": [
+            "HEM"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "C"
+          ],
+          "smiles": "COc1ccccc1-c1cn(CCc2cncn2C)nn1"
+        }
+      ],
+      "use_msas": true,
+      "use_main_msas": true,
+      "use_paired_msas": false
+    },
+    "cmpd_12": {
+      "chains": [
+        {
+          "molecule_type": "protein",
+          "chain_ids": [
+            "A"
+          ],
+          "sequence": "MALIPDLAMETWLLLAVSLVLLYLYGTHSHGLFKKLGIPGPTPLPFLGNILSYHKGFCMFDMECHKKYGKVWGFYDGQQPVLAITDPDMIKTVLVKECYSVFTNRRPFGPVGFMKSAISIAEDEEWKRLRSLLSPTFTSGKLKEMVPIIAQYGDVLVRNLRREAETGKPVTLKDVFGAYSMDVITSTSFGVNIDSLNNPQDPFVENTKKLLRFDFLDPFFLSITVFPFLIPILEVLNICVFPREVTNFLRKSVKRMKESRLEDTQKHRVDFLQLMIDSQNSKETESHKALSDLELVAQSIIFIFAGYETTSSVLSFIMYELATHPDVQQKLQEEIDAVLPNKAPPTYDTVLQMEYLDMVVNETLRLFPIAMRLERVCKKDVEINGMFIPKGVVVMIPSYALHRDPKYWTEPEKFLPERFSKKNKDNIDPYIYTPFGSGPRNCIGMRFALMNMKLALIRVLQNFSFKPCKETQIPLKLSLGGLLQPEKPVVLKVESRDGTVSGA",
+          "main_msa_file_paths": [
+            "<pathto>/cyp3a4_A.npz"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "B"
+          ],
+          "ccd_codes": [
+            "HEM"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "C"
+          ],
+          "smiles": "C[C@H]1CC[C@H](NC(=O)c2ccccc2SCc2cccnc2)CC1"
+        }
+      ],
+      "use_msas": true,
+      "use_main_msas": true,
+      "use_paired_msas": false
+    },
+    "cmpd_13": {
+      "chains": [
+        {
+          "molecule_type": "protein",
+          "chain_ids": [
+            "A"
+          ],
+          "sequence": "MALIPDLAMETWLLLAVSLVLLYLYGTHSHGLFKKLGIPGPTPLPFLGNILSYHKGFCMFDMECHKKYGKVWGFYDGQQPVLAITDPDMIKTVLVKECYSVFTNRRPFGPVGFMKSAISIAEDEEWKRLRSLLSPTFTSGKLKEMVPIIAQYGDVLVRNLRREAETGKPVTLKDVFGAYSMDVITSTSFGVNIDSLNNPQDPFVENTKKLLRFDFLDPFFLSITVFPFLIPILEVLNICVFPREVTNFLRKSVKRMKESRLEDTQKHRVDFLQLMIDSQNSKETESHKALSDLELVAQSIIFIFAGYETTSSVLSFIMYELATHPDVQQKLQEEIDAVLPNKAPPTYDTVLQMEYLDMVVNETLRLFPIAMRLERVCKKDVEINGMFIPKGVVVMIPSYALHRDPKYWTEPEKFLPERFSKKNKDNIDPYIYTPFGSGPRNCIGMRFALMNMKLALIRVLQNFSFKPCKETQIPLKLSLGGLLQPEKPVVLKVESRDGTVSGA",
+          "main_msa_file_paths": [
+            "<pathto>/cyp3a4_A.npz"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "B"
+          ],
+          "ccd_codes": [
+            "HEM"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "C"
+          ],
+          "smiles": "CCc1[nH]ccc1C(=O)Nc1ccc(-n2ccnc2)cc1"
+        }
+      ],
+      "use_msas": true,
+      "use_main_msas": true,
+      "use_paired_msas": false
+    },
+    "cmpd_14": {
+      "chains": [
+        {
+          "molecule_type": "protein",
+          "chain_ids": [
+            "A"
+          ],
+          "sequence": "MALIPDLAMETWLLLAVSLVLLYLYGTHSHGLFKKLGIPGPTPLPFLGNILSYHKGFCMFDMECHKKYGKVWGFYDGQQPVLAITDPDMIKTVLVKECYSVFTNRRPFGPVGFMKSAISIAEDEEWKRLRSLLSPTFTSGKLKEMVPIIAQYGDVLVRNLRREAETGKPVTLKDVFGAYSMDVITSTSFGVNIDSLNNPQDPFVENTKKLLRFDFLDPFFLSITVFPFLIPILEVLNICVFPREVTNFLRKSVKRMKESRLEDTQKHRVDFLQLMIDSQNSKETESHKALSDLELVAQSIIFIFAGYETTSSVLSFIMYELATHPDVQQKLQEEIDAVLPNKAPPTYDTVLQMEYLDMVVNETLRLFPIAMRLERVCKKDVEINGMFIPKGVVVMIPSYALHRDPKYWTEPEKFLPERFSKKNKDNIDPYIYTPFGSGPRNCIGMRFALMNMKLALIRVLQNFSFKPCKETQIPLKLSLGGLLQPEKPVVLKVESRDGTVSGA",
+          "main_msa_file_paths": [
+            "<pathto>/cyp3a4_A.npz"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "B"
+          ],
+          "ccd_codes": [
+            "HEM"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "C"
+          ],
+          "smiles": "NS(=O)(=O)Cc1cccc(C(=O)N2CCCCCc3ccccc32)c1"
+        }
+      ],
+      "use_msas": true,
+      "use_main_msas": true,
+      "use_paired_msas": false
+    },
+    "cmpd_15": {
+      "chains": [
+        {
+          "molecule_type": "protein",
+          "chain_ids": [
+            "A"
+          ],
+          "sequence": "MALIPDLAMETWLLLAVSLVLLYLYGTHSHGLFKKLGIPGPTPLPFLGNILSYHKGFCMFDMECHKKYGKVWGFYDGQQPVLAITDPDMIKTVLVKECYSVFTNRRPFGPVGFMKSAISIAEDEEWKRLRSLLSPTFTSGKLKEMVPIIAQYGDVLVRNLRREAETGKPVTLKDVFGAYSMDVITSTSFGVNIDSLNNPQDPFVENTKKLLRFDFLDPFFLSITVFPFLIPILEVLNICVFPREVTNFLRKSVKRMKESRLEDTQKHRVDFLQLMIDSQNSKETESHKALSDLELVAQSIIFIFAGYETTSSVLSFIMYELATHPDVQQKLQEEIDAVLPNKAPPTYDTVLQMEYLDMVVNETLRLFPIAMRLERVCKKDVEINGMFIPKGVVVMIPSYALHRDPKYWTEPEKFLPERFSKKNKDNIDPYIYTPFGSGPRNCIGMRFALMNMKLALIRVLQNFSFKPCKETQIPLKLSLGGLLQPEKPVVLKVESRDGTVSGA",
+          "main_msa_file_paths": [
+            "<pathto>/cyp3a4_A.npz"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "B"
+          ],
+          "ccd_codes": [
+            "HEM"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "C"
+          ],
+          "smiles": "CN(C)C(=O)N1CCC(C(=O)N2CCN(C3CC3)c3ccccc32)CC1"
+        }
+      ],
+      "use_msas": true,
+      "use_main_msas": true,
+      "use_paired_msas": false
+    },
+    "cmpd_16": {
+      "chains": [
+        {
+          "molecule_type": "protein",
+          "chain_ids": [
+            "A"
+          ],
+          "sequence": "MALIPDLAMETWLLLAVSLVLLYLYGTHSHGLFKKLGIPGPTPLPFLGNILSYHKGFCMFDMECHKKYGKVWGFYDGQQPVLAITDPDMIKTVLVKECYSVFTNRRPFGPVGFMKSAISIAEDEEWKRLRSLLSPTFTSGKLKEMVPIIAQYGDVLVRNLRREAETGKPVTLKDVFGAYSMDVITSTSFGVNIDSLNNPQDPFVENTKKLLRFDFLDPFFLSITVFPFLIPILEVLNICVFPREVTNFLRKSVKRMKESRLEDTQKHRVDFLQLMIDSQNSKETESHKALSDLELVAQSIIFIFAGYETTSSVLSFIMYELATHPDVQQKLQEEIDAVLPNKAPPTYDTVLQMEYLDMVVNETLRLFPIAMRLERVCKKDVEINGMFIPKGVVVMIPSYALHRDPKYWTEPEKFLPERFSKKNKDNIDPYIYTPFGSGPRNCIGMRFALMNMKLALIRVLQNFSFKPCKETQIPLKLSLGGLLQPEKPVVLKVESRDGTVSGA",
+          "main_msa_file_paths": [
+            "<pathto>/cyp3a4_A.npz"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "B"
+          ],
+          "ccd_codes": [
+            "HEM"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "C"
+          ],
+          "smiles": "O=S(=O)(Nc1cccc2c1CCN2)c1sccc1C1CC1"
+        }
+      ],
+      "use_msas": true,
+      "use_main_msas": true,
+      "use_paired_msas": false
+    },
+    "cmpd_17": {
+      "chains": [
+        {
+          "molecule_type": "protein",
+          "chain_ids": [
+            "A"
+          ],
+          "sequence": "MALIPDLAMETWLLLAVSLVLLYLYGTHSHGLFKKLGIPGPTPLPFLGNILSYHKGFCMFDMECHKKYGKVWGFYDGQQPVLAITDPDMIKTVLVKECYSVFTNRRPFGPVGFMKSAISIAEDEEWKRLRSLLSPTFTSGKLKEMVPIIAQYGDVLVRNLRREAETGKPVTLKDVFGAYSMDVITSTSFGVNIDSLNNPQDPFVENTKKLLRFDFLDPFFLSITVFPFLIPILEVLNICVFPREVTNFLRKSVKRMKESRLEDTQKHRVDFLQLMIDSQNSKETESHKALSDLELVAQSIIFIFAGYETTSSVLSFIMYELATHPDVQQKLQEEIDAVLPNKAPPTYDTVLQMEYLDMVVNETLRLFPIAMRLERVCKKDVEINGMFIPKGVVVMIPSYALHRDPKYWTEPEKFLPERFSKKNKDNIDPYIYTPFGSGPRNCIGMRFALMNMKLALIRVLQNFSFKPCKETQIPLKLSLGGLLQPEKPVVLKVESRDGTVSGA",
+          "main_msa_file_paths": [
+            "<pathto>/cyp3a4_A.npz"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "B"
+          ],
+          "ccd_codes": [
+            "HEM"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "C"
+          ],
+          "smiles": "O=C(c1cccc(Cn2ccnc2)c1)N(Cc1ccccc1F)C1CC1"
+        }
+      ],
+      "use_msas": true,
+      "use_main_msas": true,
+      "use_paired_msas": false
+    },
+    "cmpd_18": {
+      "chains": [
+        {
+          "molecule_type": "protein",
+          "chain_ids": [
+            "A"
+          ],
+          "sequence": "MALIPDLAMETWLLLAVSLVLLYLYGTHSHGLFKKLGIPGPTPLPFLGNILSYHKGFCMFDMECHKKYGKVWGFYDGQQPVLAITDPDMIKTVLVKECYSVFTNRRPFGPVGFMKSAISIAEDEEWKRLRSLLSPTFTSGKLKEMVPIIAQYGDVLVRNLRREAETGKPVTLKDVFGAYSMDVITSTSFGVNIDSLNNPQDPFVENTKKLLRFDFLDPFFLSITVFPFLIPILEVLNICVFPREVTNFLRKSVKRMKESRLEDTQKHRVDFLQLMIDSQNSKETESHKALSDLELVAQSIIFIFAGYETTSSVLSFIMYELATHPDVQQKLQEEIDAVLPNKAPPTYDTVLQMEYLDMVVNETLRLFPIAMRLERVCKKDVEINGMFIPKGVVVMIPSYALHRDPKYWTEPEKFLPERFSKKNKDNIDPYIYTPFGSGPRNCIGMRFALMNMKLALIRVLQNFSFKPCKETQIPLKLSLGGLLQPEKPVVLKVESRDGTVSGA",
+          "main_msa_file_paths": [
+            "<pathto>/cyp3a4_A.npz"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "B"
+          ],
+          "ccd_codes": [
+            "HEM"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "C"
+          ],
+          "smiles": "CCOc1ccc(NS(=O)(=O)c2ccc(C)cc2C)cc1S(=O)(=O)N(C)C"
+        }
+      ],
+      "use_msas": true,
+      "use_main_msas": true,
+      "use_paired_msas": false
+    },
+    "cmpd_19": {
+      "chains": [
+        {
+          "molecule_type": "protein",
+          "chain_ids": [
+            "A"
+          ],
+          "sequence": "MALIPDLAMETWLLLAVSLVLLYLYGTHSHGLFKKLGIPGPTPLPFLGNILSYHKGFCMFDMECHKKYGKVWGFYDGQQPVLAITDPDMIKTVLVKECYSVFTNRRPFGPVGFMKSAISIAEDEEWKRLRSLLSPTFTSGKLKEMVPIIAQYGDVLVRNLRREAETGKPVTLKDVFGAYSMDVITSTSFGVNIDSLNNPQDPFVENTKKLLRFDFLDPFFLSITVFPFLIPILEVLNICVFPREVTNFLRKSVKRMKESRLEDTQKHRVDFLQLMIDSQNSKETESHKALSDLELVAQSIIFIFAGYETTSSVLSFIMYELATHPDVQQKLQEEIDAVLPNKAPPTYDTVLQMEYLDMVVNETLRLFPIAMRLERVCKKDVEINGMFIPKGVVVMIPSYALHRDPKYWTEPEKFLPERFSKKNKDNIDPYIYTPFGSGPRNCIGMRFALMNMKLALIRVLQNFSFKPCKETQIPLKLSLGGLLQPEKPVVLKVESRDGTVSGA",
+          "main_msa_file_paths": [
+            "<pathto>/cyp3a4_A.npz"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "B"
+          ],
+          "ccd_codes": [
+            "HEM"
+          ]
+        },
+        {
+          "molecule_type": "ligand",
+          "chain_ids": [
+            "C"
+          ],
+          "smiles": "O=C1Cc2cc(CCCC(=O)N3CCC3c3ccc(F)c(F)c3)ccc2N1"
+        }
+      ],
+      "use_msas": true,
+      "use_main_msas": true,
+      "use_paired_msas": false
+    }
+  }
+}
