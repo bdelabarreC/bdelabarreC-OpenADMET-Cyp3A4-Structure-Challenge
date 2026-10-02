@@ -63,6 +63,7 @@ Competition update for my entries as of this upload:
 |---|---|---|---|---|---|---|---|---|
 | 8 | TCB | 2026-09-29 | ~0.27 | - | - | 1 | 1(A) | Direct openfold output best of 4x (7 entries failed QC) |
 | 5 | TCB | 2026-09-30 | 0.3506 | 5.5842 | 0.5916 | 1 | 1(C) | Output from run 1 put through light OpenMM minimization |
+| 7 | TCB | 2026-10-02 | 0.3917 | 4.2177 | 0.6702 | 1 | 2(c) | best of 20 per molecule taken and put through light minimization with explicit solvent model |
 
 Next steps - an expanded run of 20 poses per compound showed that OF3 is predicting ligand positions within a very narrow range.
 Although I had hoped that using the latest .pt file from OF3 would give a wider range of possibilities, it may be necessary to select
