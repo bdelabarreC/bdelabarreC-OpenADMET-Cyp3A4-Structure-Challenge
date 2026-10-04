@@ -7,9 +7,9 @@ Competition update for my entries as of this upload:
 
 | Rank | Username | Submitted  | LDDT-PLI | LDDT-LP | BiSyRMSD | Coverage | Run # | Diff to Top | Median | Note |
 |-----:|----------|------------|---------:|--------:|---------:|---------:|-------|-------------|--------|------|
-| 8 | TCB | 2026-09-29 | ~0.27  | -      | -      | 1 | 1(A) | 0.16 | 0.39  | Direct openfold output best of 4x (7 entries failed QC) |
-| 5 | TCB | 2026-09-30 | 0.3506 | 5.5842 | 0.5916 | 1 | 1(C) | 0.075 | 0.39  | Output from run 1 put through light OpenMM minimization |
-| 7 | TCB | 2026-10-02 | 0.3917 | 4.2177 | 0.6702 | 1 | 2(C) | 0.034 | 0.39  | Best of 20 per molecule taken and put through light minimization with explicit solvent model |
+| 3 | TCB | 2026-09-29 | ~0.27  | -      | -      | 1 | 1(A) | 0.16 | 0.39  | Direct openfold output best of 4x (7 entries failed QC) |
+| 2 | TCB | 2026-09-30 | 0.3506 | 5.5842 | 0.5916 | 1 | 1(C) | 0.075 | 0.39  | Output from run 1 put through light OpenMM minimization |
+| 1 | TCB | 2026-10-02 | 0.3917 | 4.2177 | 0.6702 | 1 | 2(C) | 0.034 | 0.39  | Best of 20 per molecule taken and put through light minimization with explicit solvent model |
 
 
 Initial thoughts: 
