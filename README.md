@@ -2,7 +2,7 @@ This will be where I will host detailed information on my participation in OpenA
 Start date:  27Sept2026
 Competition end date:  3Nov2026
 
-Competition update for my entries as of this upload:
+Most recently updated competition standings (live table at HF: https://huggingface.co/spaces/openadmet/cyp-challenge)
 
 
 | Rank | Username | Submitted  | LDDT-PLI | LDDT-LP | BiSyRMSD | Cov | Run # | Diff to Top | Median (all) | Note |
