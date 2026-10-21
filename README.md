@@ -73,3 +73,18 @@ File descriptions (work in progress):
 Next steps - an expanded run of 20 poses per compound showed that OF3 is predicting ligand positions within a very narrow range.
 Although I had hoped that using the latest .pt file from OF3 would give a wider range of possibilities, it may be necessary to select
 a set of .pdb structures and do some fine-tuning to minimize the current bias to place all ligands very close to the heme group.
+
+
+A review of the ~120 structures in the PDB of molecules bound to the heme iron showed a huge bias that will be difficult to overcome with weight based tuning.  After removing duplicates, the dataset consists of 94 heme coordinating and only 14 non-heme coordinating.
+
+Finetuning here would be poor returns on the work required to run that.
+
+The bias was made clear by running a modified compound 9 where the pyrdine ring was replaced by a penyl group (ie - coordinating nitrogen removed).  OF3 will place these two compounds into the exact same place, with a slight offset due to the proton on the phenyl ring.  This is a wrong answer but one that is understandable based on the bias in the training set.
+
+So instead - I started using pocket definitions and reworked some of the OF3 code to allow me to create exclusion zones, specifically around the Heme iron atom.
+
+The pocket definitions is based on reviewing all of the experimental structures and picking residues that are within 3.5A of any.  For the 19 non-heme, I had a separate pocket defintion.  I split the challenge compounds into two sets (heme binding (11) and non heme-binding (9).  I did two separate runs generating 20 structures per compound (5 different starting seeds * 4 runs per seed).
+
+I retained the light minimization via OpenMM and added an energy evaluation step via OrbMol.  Unfortunately - the resulting score did not beat the previous efforts!  I used pure OrbMol scoring for selection - it may be worth a revisit to use a combination of OrbMol and IPTM type scoring.
+
+However - I am at least a full tenth below the top scores using this approach, so my next effort will pivot to using ESMFold2 to generate the initial poses.  The difficulty here is that I don't think I can run their best model locally, and have to rely on the default 100 tokens/day or get a waiver to allow bigger runs to compute the poses.  My first effort had me running out of tokens around compound 9 generating just 5 poses per compound.
