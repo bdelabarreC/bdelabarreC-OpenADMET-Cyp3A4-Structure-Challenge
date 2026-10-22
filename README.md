@@ -11,7 +11,7 @@ Most recently updated competition standings (live table at HF: https://huggingfa
 | 4 | TCB | 2026-09-29 | ~0.27  | -      | -      | 1 | 1(A) | 0.20 | 0.39  | Direct openfold output best of 4x (7 entries failed QC) |
 | 3 | TCB | 2026-09-30 | 0.3506 | 5.5842 | 0.5916 | 1 | 1(C) | 0.12 | 0.39  | Output from run 1 put through light OpenMM minimization |
 | 1 | TCB | 2026-10-02 | 0.3917 | 4.2177 | 0.6702 | 1 | 2(C) | 0.075 | 0.39  | Best of 20 per molecule taken and put through light minimization with explicit solvent model |
-| 4 | TCB | 2026-10-22 | 0.275  | 10.2 | 0.507 | 1 | 5A | 0.21 | - | Baseline EMSFold2.  No minimization, scored best of 5 by IPTM |
+| 4 | TCB | 2026-10-22 | 0.275  | 10.2 | 0.507 | 1 | 5A | 0.21 | - | Baseline EMSFold2.  No minimization, scored best of 5 by IPTM (4 failed QC) |
 
 
 Initial thoughts: 
