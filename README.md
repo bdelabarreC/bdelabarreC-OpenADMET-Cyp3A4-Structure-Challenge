@@ -7,12 +7,12 @@ Most recently updated competition standings (live table at HF: https://huggingfa
 
 | Rank | Username | Submitted  | LDDT-PLI | BiSyRMSD | LDDT-LP | Run # | Diff to Top | Note |
 |-----:|----------|------------|---------:|--------:|---------:|---------:|--------|----------|
-| 1 | TCB | 2026-10-23 | 0.447  | 3.865  | 0.8095 | 5B   | 0.034 | EMSFold2.  OpenMM minimization.  Best of 5 by orbmol/iptm 
-| 3 | TCB | 2026-10-20 | 0.3773 | 4.3487 | 0.6521 | 4    | 0.104 | OF3 prediction, Split dataset into heme binders vs non-hemebinders and used different pocket environments.  Scoring by orbmol energy calc only to pick best prediction |
-| 5 | TCB | 2026-09-29 | ~0.27  | -      | -      | 1(A) | 0.20 | Direct openfold output best of 4x (7 entries failed QC) |
-| 4 | TCB | 2026-09-30 | 0.3506 | 5.5842 | 0.5916 | 1(C) | 0.12 | Output from run 1 put through light OpenMM minimization |
+| 1 | TCB | 2026-10-23 | 0.447  | 3.865  | 0.8095 | 5B   | 0.034 | EMSFold2.  OpenMM minimization.  Best of 5 by orbmol/iptm.  3 failed QC.
 | 2 | TCB | 2026-10-02 | 0.3917 | 4.2177 | 0.6702 | 2(C) | 0.075 | Best of 20 per molecule taken and put through light minimization with explicit solvent model |
+| 3 | TCB | 2026-10-20 | 0.3773 | 4.3487 | 0.6521 | 4    | 0.104 | OF3 prediction, Split dataset into heme binders vs non-hemebinders and used different pocket environments.  Scoring by orbmol energy calc only to pick best prediction |
+| 4 | TCB | 2026-09-30 | 0.3506 | 5.5842 | 0.5916 | 1(C) | 0.12 | Output from run 1 put through light OpenMM minimization |
 | 5 | TCB | 2026-10-22 | 0.275  | 10.2 | 0.507 | 5A | 0.21 | Baseline EMSFold2.  No minimization, scored best of 5 by IPTM (4 failed QC) |
+| 5 | TCB | 2026-09-29 | ~0.27  | -      | -      | 1(A) | 0.20 | Direct openfold output best of 4x (7 entries failed QC) |
 
 
 Initial thoughts: 
