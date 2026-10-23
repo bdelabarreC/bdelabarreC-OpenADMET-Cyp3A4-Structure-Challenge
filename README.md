@@ -5,8 +5,8 @@ Competition end date:  3Nov2026
 Most recently updated competition standings (live table at HF: https://huggingface.co/spaces/openadmet/cyp-challenge)
 
 
-**| Rank | Username | Submitted  | LDDT-PLI | BiSyRMSD | LDDT-LP | Run # | Diff to Top | Note |**
-|-----:|----------|------------|---------:|--------:|---------:|---------:|-------|-------------|--------|------|
+| Rank | Username | Submitted  | LDDT-PLI | BiSyRMSD | LDDT-LP | Run # | Diff to Top | Note |
+|-----:|----------|------------|---------:|--------:|---------:|---------:|--------|----------|
 | 1 | TCB | 2026-10-23 | 0.447  | 3.865  | 0.8095 | 5B   | 0.034 | EMSFold2.  OpenMM minimization.  Best of 5 by orbmol/iptm 
 | 3 | TCB | 2026-10-20 | 0.3773 | 4.3487 | 0.6521 | 4    | 0.104 | OF3 prediction, Split dataset into heme binders vs non-hemebinders and used different pocket environments.  Scoring by orbmol energy calc only to pick best prediction |
 | 5 | TCB | 2026-09-29 | ~0.27  | -      | -      | 1(A) | 0.20 | Direct openfold output best of 4x (7 entries failed QC) |
