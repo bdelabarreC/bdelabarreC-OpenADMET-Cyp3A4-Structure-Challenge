@@ -22,7 +22,7 @@ Initial thoughts:
 
 This is a larger protein - more vRAM would be helpful but I will stick to workflows suitable for my NVidia 4070 with 16 Gb vRAM. ** update - all EMSFOLD2 entries were run on the biohub platform.
 
-The PXR top scoring entries used ESMFold2 but that does not fit within the above criterion.  Will likely stick to OpenFold3 here.
+The PXR top scoring entries used ESMFold2 but that does not fit within the above criterion.  Will likely stick to OpenFold3 here.  OF3 seemed to have topped out - went to EMSFOLD2 in last few weeks of competition.  May revist OF3 with updated ranking (OpenMM / posebusters / orbmol) created for EMSFold2 output.
 
 Goals:
 Focus on opensource and homebrewed methods.
