@@ -8,8 +8,8 @@ Most recently updated competition standings (live table at HF: https://huggingfa
 | Rank | Username | Submitted  | LDDT-PLI | BiSyRMSD | LDDT-LP | Run # | Diff to Top | Note |
 |-----:|----------|------------|---------:|--------:|---------:|---------:|--------|----------|
 | 1 | TCB | 2026-10-25 | 0.457  | 3.786  | 0.8107 | 5D   | 0.023 | ESMFold2, all structures folded with same pocket defintion but then refined in 2 different groups (heme binder vs non-binder) |
-| 1 | TCB | 2026-10-28 | 0.456  | 3.785  | 0.8105 | 9A   | 0.023 | ESMFold2, full structure with 5 subpockets defined.  Same settings as 5D with refactored full stack run, test for reproducibility.  Selection by OpenMM->PoseBusters->Orbmol (tie breaker IPTM) |  added pocket 6 to expand coverage.  Relaxed Heme constraint for non-binders & Optimized orbmol energy scoring by extending from 3.5 to 4.5 radius |
-| 1 | TCB | 2026-10-28 | 0.43  | 3.793  | 0.808 | 10A   | 0.028 |  
+| 1 | TCB | 2026-10-28 | 0.456  | 3.785  | 0.8105 | 9A   | 0.023 | ESMFold2, full structure with 5 subpockets defined.  Same settings as 5D with refactored full stack run, test for reproducibility.  Selection by OpenMM->PoseBusters->Orbmol (tie breaker IPTM) |  
+| 1 | TCB | 2026-10-28 | 0.43  | 3.793  | 0.808 | 10A   | 0.028 |  added pocket 6 to expand coverage.  Relaxed Heme constraint for non-binders & Optimized orbmol energy scoring by extending from 3.5 to 4.5 radius |
 | 2 | TCB | 2026-10-23 | 0.447  | 3.865  | 0.8095 | 5B   | 0.034 | EMSFold2.  OpenMM minimization.  Best of 5 by orbmol/iptm.  3 failed QC. |
 | 3 | TCB | 2026-10-27 | 0.434 | 4.08  | 0.796 | 8A   | 0.05 | EMSFold2 starting at AA 21, run across 5 different subpockets (like 5D).  OpenMM minimization.  Has to pass posebusters,then ranking by orbmol with tiebreaker by iptm.  All chiralities submitted correct, emsfold2 scrambles.
 | 4 | TCB | 2026-10-27 | 0.431  | 4.100  | 0.7944 | 7A   | 0.05 | EMSFold2 starting at AA 21, run across 10 different subpockets plus full pocket.  OpenMM minimization.  Has to pass posebusters, then best by orbmol energy/iptm.  NB all chiralities submitted correct, EMSFOLD2 scrambled some |
