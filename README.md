@@ -106,4 +106,9 @@ I have probably pushed EMSFold2 as far as I can go (the limited tokens makes it 
 
 Post run selection/optimization optimization appears to have topped out - I will revisit post competition with full dataset in hand.  
 
-With pockets & refinement/selection parameters fully optimized, perhaps time to revisit OF3 and then give Boltz2 a shot.
+With pockets & refinement/selection parameters fully optimized, perhaps time to revisit OF3 and then give Boltz2 a shot.  Or maybe not - it is getting close to end of competition.  I may try a few more refinement runs with redefined binders/non-binders.  There were a few ambiguous calls - a correct categorization of all would likely improve score since refinement hinges on proximity to the Heme Fe (bond vs no-bond).
+
+In the meantime - nice result using the integrated OpenMM/Posebusters/Orbmol refinment/selection stack.  I was able to boost the OpenFold3 run2 effort (straightforward run - 20 tries per compound) from 0.39 (run 2C) to 0.44 (run 2D).  The plot of energies and iptm show the benefit of generating multiple poses during co-folding and then letting a combo of energy & iptm sort things out.  Here is a plot showing how these were used to make the selection. 
+
+<img width="1483" height="1153" alt="image" src="https://github.com/user-attachments/assets/3849adf7-17e9-4da8-befa-e611e07183a3" />
+
