@@ -12,9 +12,10 @@ Most recently updated competition standings (live table at HF: https://huggingfa
 | 1 | TCB | 2026-10-28 | 0.453  | 3.793  | 0.808 | 10A   | 0.028 |  added pocket 6 to expand coverage.  Relaxed Heme constraint for non-binders & Optimized orbmol energy scoring by extending from 3.5 to 4.5 radius |
 | 1 | TCB | 2026-10-29 | 0.454  | 3.786  | 0.810 | 9B   | 0.27 |  Rerun of 9A using optimized refinment/selection (0.26 wall_fc / 4.5A orbmol sphere) |
 | 2 | TCB | 2026-10-23 | 0.447  | 3.865  | 0.8095 | 5B   | 0.034 | EMSFold2.  OpenMM minimization.  Best of 5 by orbmol/iptm.  3 failed QC. |
+| 3 | TCB | 2026-10-30 | 0.438  | 3.781  | 0.6734 | 2D   | 0.043 | OF3 - Run 2D -optimized full stack refinement & selection on openfold run2 (more straightforward and higher scoring run - see run 2C for more background  |
 | 3 | TCB | 2026-10-27 | 0.434 | 4.08  | 0.796 | 8A   | 0.05 | EMSFold2 starting at AA 21, run across 5 different subpockets (like 5D).  OpenMM minimization.  Has to pass posebusters,then ranking by orbmol with tiebreaker by iptm.  All chiralities submitted correct, emsfold2 scrambles.
 | 4 | TCB | 2026-10-27 | 0.431  | 4.100  | 0.7944 | 7A   | 0.05 | EMSFold2 starting at AA 21, run across 10 different subpockets plus full pocket.  OpenMM minimization.  Has to pass posebusters, then best by orbmol energy/iptm.  NB all chiralities submitted correct, EMSFOLD2 scrambled some |
-| 5 | TCB | 2026-10-02 | 0.3917 | 4.2177 | 0.6702 | 2(C) | 0.075 | OF3: Best of 20 per molecule taken and put through light minimization with explicit solvent model |
+| 5 | TCB | 2026-10-02 | 0.3917 | 4.2177 | 0.6702 | 2(C) | 0.075 | OF3: Best of 20 per molecule taken and put through light minimization with implicit solvent model added |
 | 6 | TCB | 2026-10-20 | 0.3773 | 4.3487 | 0.6521 | 4    | 0.104 | OF3 prediction, Split dataset into heme binders vs non-hemebinders and used different pocket environments.  Scoring by orbmol energy calc only to pick best prediction |
 | 7 | TCB | 2026-09-30 | 0.3506 | 5.5842 | 0.5916 | 1(C) | 0.12 | OF3 Output from run 1 put through light OpenMM minimization |
 | 8 | TCB | 2026-10-22 | 0.275  | 10.2 | 0.507 | 5A | 0.21 | Baseline EMSFold2.  No minimization, scored best of 5 by IPTM (4 failed QC) |
