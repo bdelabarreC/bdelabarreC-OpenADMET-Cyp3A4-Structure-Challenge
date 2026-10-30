@@ -112,3 +112,6 @@ In the meantime - nice result using the integrated OpenMM/Posebusters/Orbmol ref
 
 <img width="1483" height="1153" alt="image" src="https://github.com/user-attachments/assets/3849adf7-17e9-4da8-befa-e611e07183a3" />
 
+Useful post co-folding selection is what was missing from my previous PXR efforts.  In that case - comparison to the actual structures showed that with enough co-folding attempts, the correct structure was there (or at least with 4A) over 90% of the time.
+
+This new refinement/selection stack (working name sweet-sipper) improves both the OF3 and the ESMFold2 scores.  It will be interesting to compare it against the released data after the competition.
