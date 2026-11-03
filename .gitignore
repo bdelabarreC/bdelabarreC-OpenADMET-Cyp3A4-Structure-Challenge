@@ -1,12 +1,21 @@
 # 1. Security (CRITICAL)
 .env
 .env.*
+.vscode/settings.json
 
 # 2. Specific Folders to Hide
 # Add a trailing slash (/) to ignore an entire directory and everything inside it
 data/
 openfold_work/
 cyp3a4_structures/
+csv_files/
+Claude_stuff/
+esmfold_work/
+logs/
+older_notebooks/
+plots/
+pymol_scripts/
+trashcan/
 
 # 3. File Extensions to Hide (Prevents uploading massive data files)
 

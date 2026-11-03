@@ -6,6 +6,7 @@ pixi run -e openfold3-cuda13 run_openfold predict \
   --inference-ckpt-path $CHECKPTS/of3-ob-2025-06-30-174k.pt \  # this file can be downloaded by pulling the latests Openfold3 from github
   --use-msa-server false --use-templates false --num-diffusion-samples 4 \
   --num-model-seeds 5 \
+  --runner-yaml $WORK/cyp3a4_pocket.yml \
   --output-dir $WORK/<path to model output, eg. cyp_predictions/openadmet20_run2>  &> $WORK/<captures errors for later review, e.g. of3_output_run2.txt>
 
 

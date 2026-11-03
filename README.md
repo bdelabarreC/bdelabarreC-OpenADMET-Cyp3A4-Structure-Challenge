@@ -58,11 +58,18 @@ In some cases I have generated 'githubsafe' versions of files where I have remov
 
 File descriptions (work in progress):
 
-### Notebooks & Scripts
-* `run_openfold_githubsafe.txt` - How I execute an OpenFold run
-* `structure_prediction.ipynb` - Jupyter notebook for processing post-OF3 run
-* `structure_refinement.ipynb` - Jupyter notebook for further processing via OpenMM
-
+### Code / Notebooks
+* `openfold3_cyp3a4_setup.ipynb` - How I execute an OpenFold run
+* `esmfold2_cyp3a4_setup.ipynb` - Jupyter notebook for processing post-OF3 run
+* `cyp_suite_driver_v2.ipynb` - Jupyter notebook for post co-fold processing .cif files moved into a single folder.  Currently set up to do either esmfold or OpenFold3, but in principle can be easily extended to any other co-folder.  
+* `cyp_suite_pools.ipynb` - distilled specialized (extremely beta!) approach to blending output from multiple co-folders
+* `structure_prediction_submit.ipynb` - run final check and send submission to OpenADMET via API
+* `pose_in_pocket_check.ipynb` - make sure that co-folder didn't place small molecule outside of defined pocket
+* `classify_heme_binders.py` - automated sorter to identify Heme-Fe binder motifs from SMILES codes
+* `cofolder_processer.py` - module used by cyp_suite_driver_v2.ipynb.  This can be generalized to any cofolding output.
+* `OpenMM_environmentcheck.py` - ensure that required modules for OpenMM are present in a conda environment
+* `validation.py` - required by the structure_prediction_submit.ipynb (created by OpenAdmet team)
+* `submit_when_open.py` - sleep saving utility for the competition - make a timed submission to OpenAdmet with the latest prediction
 ### Data Files
 * `cyp3a4_A.npz` - Alignment file for input to OF3
 * `cyp3a_PDB_2026.xlsx` - Current list of human CYP3A4 files in the PDB (via UniProt lookup)
@@ -70,7 +77,7 @@ File descriptions (work in progress):
 * `validation.py` - Presubmission validation file provided by OpenADMET
 * `cyp3a4_challenge_vs_pdb.csv` - Comparison of PDB ligands to the current OpenADMET challenge set
 * `cyp_challenge_compound.csv` - OpenADMET challenge compounds
-* `openadmet20_query_cyp3A4_githubsafe.json` - JSON file for running OF3
+* `openadmet20_query_cyp3A4_githubsafe.json` - example JSON file for running OF3
 
 ### Auxiliary Files
 * `dotenv_example_forgithub` - Example of a `.env` file structure
