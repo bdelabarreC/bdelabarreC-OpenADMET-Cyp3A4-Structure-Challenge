@@ -81,7 +81,7 @@ File descriptions (work in progress):
 
 ### Auxiliary Files
 * `dotenv_example_forgithub` - Example of a `.env` file structure
-* `LICENSE` - GNU license file
+* `LICENSE` - MIT license file
 * `README.md` - This file               
 
 
