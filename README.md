@@ -125,9 +125,9 @@ Useful post co-folding selection is what was missing from my previous PXR effort
 
 This new refinement/selection stack (working name sweet-sipper) improves both the OF3 and the ESMFold2 scores.  It will be interesting to compare it against the released data after the competition.
 
-Initial Conclusions
+###Initial Conclusions
 
-Final scoring completed - my standing tumbeled quite a bit!  Congrats to 'dargason' with a clear top-scoring entry.  They went all out and took input from every available co-folding platform, generating 100s of potential poses per ligand, and then triaged down to consensus entries along lines similar to what I used here (heme type binder, energetics in the pocket, iptm based scoring).  We had the same split of TypeI/TypeII binders (this is easily done by inspecting the compounds!). I went from sitting in the top 10 at close of competition all the way down to 30th! I think my methods were sensible - I may have simply been underpowered in the number of attempts made per ligand.
+Final scoring completed - my standing tumbeled quite a bit!  This is a bit disappointing - I did better in the previous PXR challenge.   Congrats to 'dargason' with a clear top-scoring entry.  They went all out and took input from every available co-folding platform, generating 100s of potential poses per ligand, and then triaged down to consensus entries along lines similar to what I used here (heme type binder, energetics in the pocket, iptm based scoring).  We had the same split of TypeI/TypeII binders (this is easily done by inspecting the compounds!). I went from sitting in the top 10 at close of competition all the way down to 30th! I think my methods were sensible - I may have simply been underpowered in the number of attempts made per ligand.
 
 <img width="720" height="442" alt="image" src="https://github.com/user-attachments/assets/fba697f9-2bb2-47e2-9c52-930d27af66ae" />
 
