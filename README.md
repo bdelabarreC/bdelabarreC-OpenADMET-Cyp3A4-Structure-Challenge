@@ -7,6 +7,7 @@ Most recently updated competition standings (live table at HF: https://huggingfa
 
 | Rank | Username | Submitted  | LDDT-PLI | BiSyRMSD | LDDT-LP | Run # | Diff to Top | Note |
 |-----:|----------|------------|---------:|--------:|---------:|---------:|--------|----------|
+| * | TCB | 2026-11-02 | 0.379  | 4.414  | 0.821 | 9A   | 0.102 | ESMFold2, all structures folded with same pocket defintion but then refined in 2 different groups (heme binder vs non-binder).  Selection by orbmol energy/posebusters pass.  IPTM used as tie breaker when dE did not distinguish  Run 9A as final submitted.  Scored against all 20 compounds.|
 | 1 | TCB | 2026-10-25 | 0.457  | 3.786  | 0.8107 | 5D   | 0.023 | ESMFold2, all structures folded with same pocket defintion but then refined in 2 different groups (heme binder vs non-binder) |
 | 1 | TCB | 2026-10-28 | 0.456  | 3.785  | 0.8105 | 9A   | 0.023 | ESMFold2, full structure with 5 subpockets defined.  Same settings as 5D with refactored full stack run, test for reproducibility.  Selection by OpenMM->PoseBusters->Orbmol (tie breaker IPTM) |  
 | 1 | TCB | 2026-10-28 | 0.453  | 3.793  | 0.808 | 10A   | 0.028 |  added pocket 6 to expand coverage.  Relaxed Heme constraint for non-binders & Optimized orbmol energy scoring by extending from 3.5 to 4.5 radius |
@@ -123,3 +124,13 @@ In the meantime - nice result using the integrated OpenMM/Posebusters/Orbmol ref
 Useful post co-folding selection is what was missing from my previous PXR efforts.  In that case - comparison to the actual structures showed that with enough co-folding attempts, the correct structure was there (or at least with 4A) over 90% of the time.
 
 This new refinement/selection stack (working name sweet-sipper) improves both the OF3 and the ESMFold2 scores.  It will be interesting to compare it against the released data after the competition.
+
+Initial Conclusions
+
+Final scoring completed - my standing tumbeled quite a bit!  Congrats to 'dargason' with a clear top-scoring entry.  They went all out and took input from every available co-folding platform, generating 100s of potential poses per ligand, and then triaged down to consensus entries along lines similar to what I used here (heme type binder, energetics in the pocket, iptm based scoring).  We had the same split of TypeI/TypeII binders (this is easily done by inspecting the compounds!). I went from sitting in the top 10 at close of competition all the way down to 30th! I think my methods were sensible - I may have simply been underpowered in the number of attempts made per ligand.
+
+<img width="720" height="442" alt="image" src="https://github.com/user-attachments/assets/fba697f9-2bb2-47e2-9c52-930d27af66ae" />
+
+In retrospect - I should have spent more time tuning some of my OpenMM and orbmol settings on known structures.  In practice - I only streamlined my methods towards the end of October.  Early October I was jumping beteen multiple notebook cells and copying files through the terminal.  Important lesson:  streamline & optimize as soon as you can to allow small changes to be reliably tested!  I will revisit this when the final answers come out - using them as my hold-out set against parameters tuned to PDB structures.
+
+I had been bullish on co-folding methods based on the PXR results where I saw the correct answer being found within less than 50 poses generated per structure (still hard to pick out the correct one!).  That is required 100s and the running of a half-dozen prediction packages let's us know that diffusion based co-folding does not work for all targets!  There were over 100 examples in the PDB of Cyp3A4.  Most definitely there was a bias towards Type I binders (bonding via Heme-Fe), but there were ~20 Type II structures.  The models could perhaps be improved by selecting only well supported (ie good electron density) ligands.  Reliably predicting ligand position in a protein pocket would appear to still be an unsolved problem.  If we can't make reliable predictions with this much data, there is clearly something amiss in our methods.
