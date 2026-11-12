@@ -298,7 +298,7 @@
     catch (e) { console.error(e); setStatus(`Could not load submissions/${label}/manifest.js`); return; }
     current = label; M = man; models = man.models; byId = Object.fromEntries(models.map(m => [m.id, m]));
     pick.value = label;
-    document.getElementById('desc').textContent = man.description || '';
+        document.getElementById('desc').textContent = (SUBS.find(s => s.label === label) || {}).description || man.description || '';
     document.title = `CYP3A4 · Submission ${label} · Selected models`;
     try { if (location.hash !== '#' + label) history.replaceState(null, '', '#' + label); } catch (e) {}
     [...selected].forEach(id => { if (!byId[id]) selected.delete(id); });
