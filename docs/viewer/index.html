@@ -229,17 +229,18 @@
     + (missing.length ? 'Still to add: ' + missing.join(', ') + '.' : '');
 
   // ---- data files (loaded on demand as scripts) --------------------------
-  const cache = {}, waiting = {};
+  const cache = {}, waiting = {}, failed = {};
   window.CYP_REGISTER = rec => { cache[rec.id] = rec; (waiting[rec.id] || []).forEach(f => f(rec)); delete waiting[rec.id]; };
   function loadData(id) {
     if (cache[id]) return Promise.resolve(cache[id]);
+    if (failed[id]) return Promise.reject(new Error('Structure file for ' + id + ' is missing'));
     return new Promise((res, rej) => {
       const first = !waiting[id];
       (waiting[id] = waiting[id] || []).push(res);
       if (!first) return;
       const s = document.createElement('script');
-      s.src = 'data/' + id + '.js';
-      s.onerror = () => rej(new Error('Could not load ' + id));
+      s.src = 'structures/' + id + '.js';
+      s.onerror = () => { failed[id] = true; delete waiting[id]; rej(new Error('Structure file for ' + id + ' is missing')); };
       document.head.append(s);
     });
   }
@@ -287,16 +288,16 @@
     }
     const add = [...want].filter(k => !(k in refs));
     add.sort((a, b) => /protein/.test(a) - /protein/.test(b));   // small parts first
-    let n = 0;
+    let n = 0, problem = '';
     for (const k of add) {
       if (pending) break;                       // a newer request supersedes this one
       const [id, key] = k.split('|');
       setStatus(`Loading ${++n}/${add.length}…`);
       try { await addPart(id, PARTS.find(p => p.key === key)); }
-      catch (e) { console.error(e); setStatus('Problem loading ' + id); }
+      catch (e) { console.error(e); problem = 'Could not load structures/' + id + '.js'; }
     }
     if (firstFit && Object.keys(refs).length) { firstFit = false; zoomPocket(0); }
-    if (!pending) setStatus('');
+    if (!pending) setStatus(problem);
   }
   function sync() {
     if (!plugin) return;
