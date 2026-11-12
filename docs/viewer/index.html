@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CYP3A4 · Submission 9A · Selected models</title>
+<title>CYP3A4 · Selected models</title>
 <link rel="stylesheet" href="molstar.css">
 <style>
   :root { --line:#d9d9d9; --ink:#1a1a1a; --muted:#6b6b6b; --hover:#f3f6fb; --sel:#eaf1fb; --exp:#f3dc9a; }
@@ -15,9 +15,10 @@
            border-bottom: 1px solid var(--line); }
   header h1 { font-size: 15px; margin: 0; font-weight: 700; }
   header .meta { color: var(--muted); }
+  header select { font: inherit; padding: 2px 4px; }
   #status { color: var(--muted); font-style: italic; }
   main { flex: 1; display: flex; min-height: 0; }
-  #side { width: 610px; max-width: 48vw; display: flex; flex-direction: column; border-right: 2px solid var(--line); min-height: 0; }
+  #side { width: 760px; max-width: 54vw; display: flex; flex-direction: column; border-right: 2px solid var(--line); min-height: 0; }
   .bar { padding: 8px 6px; border-bottom: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 6px 8px; align-items: center; }
   button { font: inherit; padding: 4px 10px; background: #fff; border: 1px solid #b9b9b9; border-radius: 3px; cursor: pointer; }
   button:hover { background: #f2f2f2; }
@@ -55,6 +56,8 @@
 <body>
 <header>
   <h1 id="title">CYP3A4 · Selected models</h1>
+  <select id="pick" aria-label="Submission"></select>
+  <span class="meta" id="desc"></span>
   <span class="meta" id="counts"></span>
   <span id="status">Loading…</span>
 </header>
@@ -83,30 +86,30 @@
 </main>
 
 <script src="molstar.js"></script>
-<script src="manifest.js"></script>
+<script src="submissions.js"></script>
 <script>
 (function () {
-  const M = window.CYP_MANIFEST;
-  const models = M.models;
-  const byId = Object.fromEntries(models.map(m => [m.id, m]));
-  const anyExp = models.some(m => m.has_exp);
+  const SUBS = window.CYP_SUBMISSIONS || [];
+  const statusEl = document.getElementById('status');
+  const countsEl = document.getElementById('counts');
+  const setStatus = t => { statusEl.textContent = t; };
 
   // ---- what can be shown -------------------------------------------------
-  // key = part name inside each data file; src = 'pred' | 'exp'
   const PARTS = [
-    { key: 'protein',     src: 'pred', part: 'protein', label: 'Protein',              on: true,  swatch: '#b5b5b5' },
-    { key: 'ligand',      src: 'pred', part: 'ligand',  label: 'Ligand',               on: true,  swatch: null },
-    { key: 'heme',        src: 'pred', part: 'heme',    label: 'Heme',                 on: true,  swatch: '#7a4a3a' },
-    { key: 'pocket',      src: 'pred', part: 'pocket',  label: 'Pocket side chains',   on: false, swatch: '#8f8f8f' },
-    { key: 'exp_ligand',  src: 'exp',  part: 'ligand',  label: 'Experimental ligand',  on: true,  swatch: '#f0cf5c', chip: true },
-    { key: 'exp_protein', src: 'exp',  part: 'protein', label: 'Experimental protein', on: true,  swatch: '#e9c46a' },
-    { key: 'exp_heme',    src: 'exp',  part: 'heme',    label: 'Experimental heme',    on: false, swatch: '#c9a27e' },
-    { key: 'exp_pocket',  src: 'exp',  part: 'pocket',  label: 'Experimental pocket side chains', on: false, swatch: '#d9b95a' },
+    { key: 'protein',     src: 'pred', part: 'protein', label: 'Protein',              on: true },
+    { key: 'ligand',      src: 'pred', part: 'ligand',  label: 'Ligand',               on: true },
+    { key: 'heme',        src: 'pred', part: 'heme',    label: 'Heme',                 on: true },
+    { key: 'pocket',      src: 'pred', part: 'pocket',  label: 'Pocket side chains',   on: false },
+    { key: 'exp_ligand',  src: 'exp',  part: 'ligand',  label: 'Experimental ligand',  on: true, chip: '#f0cf5c' },
+    { key: 'exp_protein', src: 'exp',  part: 'protein', label: 'Experimental protein', on: true },
+    { key: 'exp_heme',    src: 'exp',  part: 'heme',    label: 'Experimental heme',    on: false },
+    { key: 'exp_pocket',  src: 'exp',  part: 'pocket',  label: 'Experimental pocket side chains', on: false },
   ];
   const show = Object.fromEntries(PARTS.map(p => [p.key, p.on]));
-  const selected = new Set([models[0].id]);
+  const selected = new Set();
   let byCompound = false;      // false: ligands by atom type (grey C predicted, gold C experimental)
   const stale = new Set();     // part keys whose representations must be rebuilt
+  let M = null, models = [], byId = {}, current = null;   // the submission on screen
 
   function style(p, m) {
     const hex = c => parseInt(c.slice(1), 16);
@@ -123,28 +126,29 @@
     }
   }
 
-  // ---- header / toggles / table -----------------------------------------
-  document.getElementById('title').textContent =
-    `${M.title} · Submission ${M.submission} · Selected ${models.length} models`;
-  const statusEl = document.getElementById('status');
-  const countsEl = document.getElementById('counts');
-  const setStatus = t => { statusEl.textContent = t; };
+  // ---- submission picker ---------------------------------------------------
+  const pick = document.getElementById('pick');
+  SUBS.forEach(s => {
+    const o = document.createElement('option');
+    o.value = s.label; o.textContent = 'Submission ' + s.label;
+    pick.append(o);
+  });
+  pick.addEventListener('change', () => openSubmission(pick.value));
+  if (SUBS.length < 2) pick.disabled = true;
 
+  // ---- part toggles ----------------------------------------------------------
   const tg = document.getElementById('toggles');
   PARTS.forEach(p => {
-    const avail = p.src === 'pred' || anyExp;
     const l = document.createElement('label');
-    l.className = 'tg' + (avail ? '' : ' off');
-    if (!avail) l.title = 'Experimental structures not loaded yet';
+    l.className = 'tg';
     const cb = document.createElement('input');
-    cb.type = 'checkbox'; cb.checked = show[p.key] && avail; cb.disabled = !avail;
+    cb.type = 'checkbox'; cb.checked = show[p.key];
     cb.addEventListener('change', () => { show[p.key] = cb.checked; sync(); });
     const s = document.createElement('span');
     s.textContent = p.label;
-    if (p.chip) { s.className = 'chip'; s.style.background = avail ? p.swatch : '#f1f1f1'; }
+    if (p.chip) { s.className = 'chip'; s.style.background = p.chip; }
     l.append(cb, s); tg.append(l);
   });
-
   {
     const l = document.createElement('label');
     l.className = 'tg'; l.title = 'Give each predicted ligand its row colour instead of atom-type colours';
@@ -154,15 +158,18 @@
     l.append(cb, sp); tg.append(l);
   }
 
+  // ---- table -------------------------------------------------------------------
   const COLS = [
-    { k: 'show',     t: 'Show',     nosort: true },
-    { k: 'id',       t: 'Compound' },
-    { k: 'method',   t: 'Method' },
-    { k: 'seed',     t: 'Seed',     num: true },
+    { k: 'show',        t: 'Show',     nosort: true },
+    { k: 'id',          t: 'Compound' },
+    { k: 'method',      t: 'Method' },
+    { k: 'seed',        t: 'Seed',     num: true, asc: true },
     { k: 'binder_type', t: 'Binder type' },
-    { k: 'lddt_pli', t: 'LDDT-PLI', num: true, dp: 3 },
-    { k: 'iptm',     t: 'ipTM',     num: true, dp: 3 },
-    { k: 'ca_rmsd',  t: 'Cα RMSD',  num: true, dp: 2, asc: true, tip: 'Protein Cα RMSD (Å) between the prediction and chain A of the experimental structure, after superposition' },
+    { k: 'lddt_pli',    t: 'LDDT-PLI', num: true, dp: 3, tip: 'Ligand–pocket lDDT against the experimental structure (0–1, higher is better)' },
+    { k: 'iptm',        t: 'ipTM',     num: true, dp: 3, tip: 'Interface pTM reported by the folding method' },
+    { k: 'dE',          t: 'ΔE',       num: true, dp: 2, asc: true, tip: 'Energy change from refinement' },
+    { k: 'lig_rmsd',    t: 'Lig RMSD', num: true, dp: 2, asc: true, tip: 'Symmetry-corrected ligand heavy-atom RMSD (Å) after superposing the binding-site Cα atoms' },
+    { k: 'ca_rmsd',     t: 'Cα RMSD',  num: true, dp: 2, asc: true, tip: 'Protein Cα RMSD (Å) between the prediction and the experimental structure, after superposition' },
   ];
   let sortKey = null, sortDir = 1;
   const head = document.getElementById('head');
@@ -171,13 +178,13 @@
     th.textContent = c.t; if (c.tip) th.title = c.tip;
     if (c.nosort) th.className = 'nosort';
     else th.addEventListener('click', () => {
-      if (sortKey === c.k) sortDir = -sortDir; else { sortKey = c.k; sortDir = c.num && !c.asc && c.k !== 'seed' && c.k !== 'model' ? -1 : 1; }
+      if (sortKey === c.k) sortDir = -sortDir; else { sortKey = c.k; sortDir = c.num && !c.asc ? -1 : 1; }
       renderRows();
     });
     c.th = th; head.append(th);
   });
 
-  const fmt = (v, c) => v == null ? '—' : (c.dp != null ? Number(v).toFixed(c.dp) : String(v));
+  const fmt = (v, c) => v == null ? '—' : (c.dp != null && typeof v === 'number' ? v.toFixed(c.dp) : String(v));
   const rowsEl = document.getElementById('rows');
   function renderRows() {
     const list = models.slice();
@@ -209,7 +216,7 @@
           if (m.exp_lig_copies > 1) {
             const t = document.createElement('span');
             t.textContent = ' ×' + m.exp_lig_copies; t.style.color = '#9a7b00';
-            t.title = m.exp_lig_copies + ' ligand copies in the experimental structure';
+            t.title = m.exp_lig_copies + ' ligand copies in the experimental structure; scores use the best-matching copy';
             td.append(t);
           }
         } else {
@@ -224,8 +231,9 @@
       rowsEl.append(tr);
     });
   }
+
   // 2D structure panel: follows the row under the pointer, otherwise the last compound switched on
-  let focus2D = models[0].id;
+  let focus2D = null;
   function show2D(id) {
     const m = byId[id], box = document.getElementById('twoD');
     if (!m || !m.svg) { box.hidden = true; return; }
@@ -242,42 +250,71 @@
   document.getElementById('selAll').onclick = () => { models.forEach(m => selected.add(m.id)); renderRows(); sync(); };
   document.getElementById('clrAll').onclick = () => { selected.clear(); renderRows(); sync(); };
 
-  const missing = [];
-  if (!anyExp) missing.push('experimental structures');
-  if (models.every(m => m.lddt_pli == null)) missing.push('LDDT-PLI');
-  if (models.every(m => m.iptm == null)) missing.push('ipTM');
-  if (models.every(m => m.method == null)) missing.push('method / seed / binder type');
-  document.getElementById('note').textContent =
-    (anyExp ? 'Each prediction is superposed on chain A of its experimental structure (Cα fit); ×2 marks structures with two ligand copies in the site. '
-            : 'Predictions are superposed on a common frame (Cα fit to the first model). ')
-    + 'Ligands are coloured by atom type: grey carbons predicted, gold carbons experimental. Pocket side chains are residues with any atom within 5 Å of that model’s ligand. '
-    + (missing.length ? 'Still to add: ' + missing.join(', ') + '.' : '');
+  function renderNote() {
+    const missing = [];
+    const blank = k => models.every(m => m[k] == null);
+    if (blank('method') && blank('seed')) missing.push('method / seed');
+    if (blank('binder_type')) missing.push('binder type');
+    if (blank('iptm')) missing.push('ipTM');
+    if (blank('dE')) missing.push('ΔE');
+    const scored = models.filter(m => m.lddt_pli != null);
+    const mean = scored.length ? (scored.reduce((a, m) => a + m.lddt_pli, 0) / scored.length).toFixed(3) : null;
+    document.getElementById('note').textContent =
+      (mean ? `Mean LDDT-PLI ${mean} over ${scored.length} compounds. ` : '')
+      + 'Each prediction is superposed on chain A of its experimental structure (Cα fit); ×2 marks structures with two ligand copies in the site. '
+      + 'Ligands are coloured by atom type: grey carbons predicted, gold carbons experimental. '
+      + 'Pocket side chains are residues with any atom within 5 Å of the ligand. '
+      + (missing.length ? 'Not yet supplied: ' + missing.join(', ') + '.' : '');
+  }
 
-  // ---- data files (loaded on demand as scripts) --------------------------
+  // ---- data files (loaded on demand as scripts, so the folder also works from disk) ----
   const cache = {}, waiting = {}, failed = {};
-  window.CYP_REGISTER = rec => { cache[rec.id] = rec; (waiting[rec.id] || []).forEach(f => f(rec)); delete waiting[rec.id]; };
-  function loadData(id) {
-    if (cache[id]) return Promise.resolve(cache[id]);
-    if (failed[id]) return Promise.reject(new Error('Structure file for ' + id + ' is missing'));
+  const deliver = (key, rec) => { cache[key] = rec; (waiting[key] || []).forEach(f => f(rec)); delete waiting[key]; };
+  window.CYP_REGISTER_MANIFEST = rec => deliver('manifest|' + rec.label, rec);
+  window.CYP_REGISTER_PRED = rec => deliver('pred|' + rec.submission + '|' + rec.id, rec);
+  window.CYP_REGISTER_EXP = rec => deliver('exp|' + rec.id, rec);
+  function loadScript(key, url) {
+    if (cache[key]) return Promise.resolve(cache[key]);
+    if (failed[key]) return Promise.reject(new Error('Missing file: ' + url));
     return new Promise((res, rej) => {
-      const first = !waiting[id];
-      (waiting[id] = waiting[id] || []).push(res);
+      const first = !waiting[key];
+      (waiting[key] = waiting[key] || []).push(res);
       if (!first) return;
       const s = document.createElement('script');
-      s.src = 'structures/' + id + '.js';
-      s.onerror = () => { failed[id] = true; delete waiting[id]; rej(new Error('Structure file for ' + id + ' is missing')); };
+      s.src = url;
+      s.onerror = () => { failed[key] = true; delete waiting[key]; rej(new Error('Missing file: ' + url)); };
       document.head.append(s);
     });
+  }
+  const loadManifest = label => loadScript('manifest|' + label, `submissions/${label}/manifest.js`);
+  const loadPart = (src, id) => src === 'exp'
+    ? loadScript('exp|' + id, `experimental/${id}.js`)
+    : loadScript('pred|' + current + '|' + id, `submissions/${current}/${id}.js`);
+
+  async function openSubmission(label) {
+    setStatus('Loading…');
+    let man;
+    try { man = await loadManifest(label); }
+    catch (e) { console.error(e); setStatus(`Could not load submissions/${label}/manifest.js`); return; }
+    current = label; M = man; models = man.models; byId = Object.fromEntries(models.map(m => [m.id, m]));
+    pick.value = label;
+    document.getElementById('desc').textContent = man.description || '';
+    document.title = `CYP3A4 · Submission ${label} · Selected models`;
+    try { if (location.hash !== '#' + label) history.replaceState(null, '', '#' + label); } catch (e) {}
+    [...selected].forEach(id => { if (!byId[id]) selected.delete(id); });
+    if (!selected.size && models.length) selected.add(models[0].id);
+    if (!byId[focus2D]) focus2D = [...selected][0];
+    renderRows(); renderNote(); show2D(focus2D); sync();
   }
 
   // ---- Mol* --------------------------------------------------------------
   let plugin = null;
-  const refs = {};            // "id|key" -> root state ref
+  const refs = {};            // "<submission or exp>|id|part key" -> root state ref
   let chain = Promise.resolve(), pending = false, firstFit = true;
 
-  async function addPart(id, p) {
-    const rec = await loadData(id);
-    const text = rec[p.src] && rec[p.src][p.part];
+  async function addPart(refKey, id, p) {
+    const rec = await loadPart(p.src, id);
+    const text = rec[p.part];
     if (!text) return;
     const st = style(p, byId[id]);
     const b = plugin.builders;
@@ -293,33 +330,36 @@
       ? { color: 'element-symbol', colorParams: { carbonColor: { name: 'uniform', params: { value: st.carbon } } } }
       : { color: 'uniform', colorParams: { value: st.color } };
     await b.structure.representation.addRepresentation(comp, { type: st.type, typeParams, ...colour });
-    refs[id + '|' + p.key] = data.ref;
+    refs[refKey] = data.ref;
   }
 
   async function doSync() {
     pending = false;
-    const nExp = [...selected].filter(id => byId[id].has_exp).length;
-    countsEl.textContent = `${selected.size} model${selected.size === 1 ? '' : 's'} · ${nExp} experimental overlay${nExp === 1 ? '' : 's'}`;
-    const want = new Set();
+    if (!M) return;
+    const nExp = [...selected].filter(id => byId[id] && byId[id].has_exp).length;
+    countsEl.textContent = `${selected.size} of ${models.length} models shown · ${nExp} experimental overlay${nExp === 1 ? '' : 's'}`;
+    const want = new Map();   // ref key -> [id, part]
     selected.forEach(id => PARTS.forEach(p => {
-      if (show[p.key] && (p.src === 'pred' || byId[id].has_exp)) want.add(id + '|' + p.key);
+      if (!show[p.key] || !byId[id]) return;
+      if (p.src === 'exp') { if (byId[id].has_exp) want.set(`exp|${id}|${p.key}`, [id, p]); }
+      else want.set(`${current}|${id}|${p.key}`, [id, p]);
     }));
-    const drop = Object.keys(refs).filter(k => !want.has(k) || stale.has(k.split('|')[1]));
+    const drop = Object.keys(refs).filter(k => !want.has(k) || stale.has(k.split('|')[2]));
     stale.clear();
     if (drop.length) {
       const bld = plugin.build();
       drop.forEach(k => { bld.delete(refs[k]); delete refs[k]; });
       await bld.commit();
     }
-    const add = [...want].filter(k => !(k in refs));
+    const add = [...want.keys()].filter(k => !(k in refs));
     add.sort((a, b) => /protein/.test(a) - /protein/.test(b));   // small parts first
     let n = 0, problem = '';
     for (const k of add) {
       if (pending) break;                       // a newer request supersedes this one
-      const [id, key] = k.split('|');
       setStatus(`Loading ${++n}/${add.length}…`);
-      try { await addPart(id, PARTS.find(p => p.key === key)); }
-      catch (e) { console.error(e); problem = 'Could not load structures/' + id + '.js'; }
+      const [id, p] = want.get(k);
+      try { await addPart(k, id, p); }
+      catch (e) { console.error(e); problem = e.message || ('Could not load ' + id); }
     }
     if (firstFit && Object.keys(refs).length) { firstFit = false; zoomPocket(0); }
     if (!pending) setStatus(problem);
@@ -331,7 +371,8 @@
   }
 
   function zoomPocket(ms) {
-    const sel = [...selected];
+    if (!M) return;
+    const sel = [...selected].filter(id => byId[id]);
     const c = sel.length === 1 ? byId[sel[0]].center : M.pocket_center;
     try { plugin.canvas3d.camera.focus(Float64Array.from(c), 24, ms == null ? 250 : ms); }
     catch (e) { plugin.managers.camera.reset(); }
@@ -339,7 +380,15 @@
   document.getElementById('fit').onclick = () => plugin && plugin.managers.camera.reset();
   document.getElementById('fitPocket').onclick = () => plugin && zoomPocket();
 
-  renderRows(); show2D(focus2D);
+  // ---- start -----------------------------------------------------------------
+  if (!SUBS.length) { setStatus('No submissions found (submissions.js is missing or empty).'); return; }
+  const fromHash = decodeURIComponent((location.hash || '').slice(1));
+  const start = SUBS.some(s => s.label === fromHash) ? fromHash : SUBS[0].label;
+  window.addEventListener('hashchange', () => {
+    const h = decodeURIComponent(location.hash.slice(1));
+    if (h !== current && SUBS.some(s => s.label === h)) openSubmission(h);
+  });
+  openSubmission(start);
   molstar.Viewer.create('app', {
     layoutIsExpanded: false, layoutShowControls: false, layoutShowRemoteState: false,
     layoutShowSequence: false, layoutShowLog: false, layoutShowLeftPanel: false,
@@ -348,7 +397,6 @@
     collapseLeftPanel: true, collapseRightPanel: true,
   }).then(v => {
     plugin = v.plugin;
-    window.__plugin = plugin;
     try {
       plugin.canvas3d.setProps({ renderer: { backgroundColor: 0xffffff }, camera: { manualReset: true } });
     } catch (e) {}
