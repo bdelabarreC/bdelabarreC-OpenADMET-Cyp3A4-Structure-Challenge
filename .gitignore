@@ -16,6 +16,7 @@ older_notebooks/
 plots/
 pymol_scripts/
 trashcan/
+docs_zipped/
 
 # 3. File Extensions to Hide (Prevents uploading massive data files)
 
