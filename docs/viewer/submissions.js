@@ -5,6 +5,6 @@ window.CYP_SUBMISSIONS = [
  },
  {
   "label": "2D",
-  "description": "Openfold3 (openbind weights)  20 seed run with my refine/selection stack"
+  "description": "Openfold3 (2026 openbind weights)  20 seed run with my refine/selection stack"
  }
 ];
