@@ -3,6 +3,9 @@
 .env.*
 .vscode/settings.json
 
+# Notebooks not ready to share
+cyp_viewer_build.ipynb
+
 # 2. Specific Folders to Hide
 # Add a trailing slash (/) to ignore an entire directory and everything inside it
 data/
