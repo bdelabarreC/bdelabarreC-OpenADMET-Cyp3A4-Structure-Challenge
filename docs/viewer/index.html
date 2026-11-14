@@ -82,6 +82,7 @@
       <div id="twoDtext"><b id="twoDid"></b><span id="twoDsmi"></span></div>
     </div>
     <div class="note" id="note"></div>
+    <div class="note" style="border-top:0; padding-top:0; color:#1a1a1a;">Interested in deploying this approach? Contact me via: <a href="https://consultingbiochemist.com/" target="_blank" rel="noopener" style="color:#1a5fb4; font-weight:600; text-decoration:none;">The Consulting Biochemist ↗</a></div>
   </section>
   <section id="viewer"><div id="app"></div></section>
 </main>
@@ -263,7 +264,7 @@
     const mean = scored.length ? (scored.reduce((a, m) => a + m.lddt_pli, 0) / scored.length).toFixed(3) : null;
     document.getElementById('note').textContent =
       (mean ? `Mean LDDT-PLI ${mean} over ${scored.length} compounds. ` : '')
-      + 'Each prediction is superposed on chain A of its experimental structure (Cα fit); ×2 marks structures with two ligand copies in the site. '
+      + 'Each prediction is superposed on chain A of its experimental structure (Cα fit);'
       + 'Ligands are coloured by atom type: grey carbons predicted, gold carbons experimental. '
       + 'Pocket side chains are residues with any atom within 5 Å of the ligand. '
       + (missing.length ? 'Not yet supplied: ' + missing.join(', ') + '.' : '');
