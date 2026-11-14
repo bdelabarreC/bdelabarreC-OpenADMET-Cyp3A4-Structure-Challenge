@@ -2,18 +2,21 @@ This will be where I will host detailed information on my participation in OpenA
 Start date:  27Sept2026
 Competition end date:  3Nov2026
 
-Most recently updated competition standings (live table at HF: https://huggingface.co/spaces/openadmet/cyp-challenge)
+More background here:[OpenADMET Cyp3A4 Challenge](https://huggingface.co/spaces/openadmet/cyp-challenge)
 
+View my predictions [interactively](https://bdelabarrec.github.io/bdelabarreC-OpenADMET-Cyp3A4-Structure-Challenge/viewer/#9A)
+
+or follow the links in the table below for specific runs:
 
 | Rank | Username | Submitted  | LDDT-PLI | BiSyRMSD | LDDT-LP | Run # | Diff to Top | Note |
 |-----:|----------|------------|---------:|--------:|---------:|---------:|--------|----------|
-| * | TCB | 2026-11-02 | 0.379  | 4.414  | 0.821 | 9A   | 0.102 | ESMFold2, all structures folded with same pocket defintion but then refined in 2 different groups (heme binder vs non-binder).  Selection by orbmol energy/posebusters pass.  IPTM used as tie breaker when dE did not distinguish  Run 9A as final submitted.  Scored against all 20 compounds.|
+| * | TCB | 2026-11-02 | 0.379  | 4.414  | 0.821 | [9A](https://bdelabarrec.github.io/bdelabarreC-OpenADMET-Cyp3A4-Structure-Challenge/viewer/#9A)   | 0.102 | ESMFold2, all structures folded with same pocket defintion but then refined in 2 different groups (heme binder vs non-binder).  Selection by orbmol energy/posebusters pass.  IPTM used as tie breaker when dE did not distinguish  Run 9A as final submitted.  Scored against all 20 compounds.|
 | 1 | TCB | 2026-10-25 | 0.457  | 3.786  | 0.8107 | 5D   | 0.023 | ESMFold2, all structures folded with same pocket defintion but then refined in 2 different groups (heme binder vs non-binder) |
-| 1 | TCB | 2026-10-28 | 0.456  | 3.785  | 0.8105 | 9A   | 0.023 | ESMFold2, full structure with 5 subpockets defined.  Same settings as 5D with refactored full stack run, test for reproducibility.  Selection by OpenMM->PoseBusters->Orbmol (tie breaker IPTM) |  
+| 1 | TCB | 2026-10-28 | 0.456  | 3.785  | 0.8105 | [9A](https://bdelabarrec.github.io/bdelabarreC-OpenADMET-Cyp3A4-Structure-Challenge/viewer/#9A)   | 0.023 | ESMFold2, full structure with 5 subpockets defined.  Same settings as 5D with refactored full stack run, test for reproducibility.  Selection by OpenMM->PoseBusters->Orbmol (tie breaker IPTM) |  
 | 1 | TCB | 2026-10-28 | 0.453  | 3.793  | 0.808 | 10A   | 0.028 |  added pocket 6 to expand coverage.  Relaxed Heme constraint for non-binders & Optimized orbmol energy scoring by extending from 3.5 to 4.5 radius |
 | 1 | TCB | 2026-10-29 | 0.454  | 3.786  | 0.810 | 9B   | 0.27 |  Rerun of 9A using optimized refinment/selection (0.26 wall_fc / 4.5A orbmol sphere) |
 | 2 | TCB | 2026-10-23 | 0.447  | 3.865  | 0.8095 | 5B   | 0.034 | EMSFold2.  OpenMM minimization.  Best of 5 by orbmol/iptm.  3 failed QC. |
-| 3 | TCB | 2026-10-30 | 0.438  | 3.781  | 0.6734 | 2D   | 0.043 | OF3 - Run 2D -optimized full stack refinement & selection on openfold run2 (more straightforward and higher scoring run - see run 2C for more background  |
+| 3 | TCB | 2026-10-30 | 0.438  | 3.781  | 0.6734 | [2D](https://bdelabarrec.github.io/bdelabarreC-OpenADMET-Cyp3A4-Structure-Challenge/viewer/#2D)   | 0.043 | OF3 - Run 2D -optimized full stack refinement & selection on openfold run2 (more straightforward and higher scoring run - see run 2C for more background  |
 | 3 | TCB | 2026-10-27 | 0.434 | 4.08  | 0.796 | 8A   | 0.05 | EMSFold2 starting at AA 21, run across 5 different subpockets (like 5D).  OpenMM minimization.  Has to pass posebusters,then ranking by orbmol with tiebreaker by iptm.  All chiralities submitted correct, emsfold2 scrambles.
 | 4 | TCB | 2026-10-27 | 0.431  | 4.100  | 0.7944 | 7A   | 0.05 | EMSFold2 starting at AA 21, run across 10 different subpockets plus full pocket.  OpenMM minimization.  Has to pass posebusters, then best by orbmol energy/iptm.  NB all chiralities submitted correct, EMSFOLD2 scrambled some |
 | 5 | TCB | 2026-11-01 | 0.417  | 3.942  | 0.6593 | 50A   | 0.06 | Combined:  Pool of 2 best EMSFold2 and OF3 runs.  Attempted objective comparison via OrbMol energy and tiebreaker by normailzed IPTM. |
