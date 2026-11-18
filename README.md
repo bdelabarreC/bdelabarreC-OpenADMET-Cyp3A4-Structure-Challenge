@@ -79,6 +79,18 @@ My local information (directories, usernames, etc.) is protected through use of 
 * `OpenMM_environmentcheck.py` — ensure that required modules for OpenMM are present in a conda environment
 * `validation.py` — presubmission validation, required by `structure_prediction_submit.ipynb` (created by the OpenADMET team)
 * `submit_when_open.py` — sleep-saving utility for the competition: make a timed submission to OpenADMET with the latest prediction
+* `cyp_suite_configuration.md` — configuration reference for `cyp_suite`: the `RunConfig` fields that control every stage, plus the entry points
+* `run_openfold_githubsafe.txt` — the OpenFold3 prediction command I run, with local paths stripped out. Includes notes on the diffusion-sample count that fits in 16 GB of vRAM.
+
+### Viewer
+
+The interactive viewer is served from `docs/` via GitHub Pages:
+
+* `docs/viewer/index.html` — the viewer itself: compound table and scores on the left, Mol\* 3D view on the right
+* `docs/viewer/submissions.js` — list of submissions offered in the picker
+* `docs/viewer/submissions/<label>/` — per-submission manifest and predicted structures
+* `docs/viewer/experimental/` — experimental structures used for the overlays
+* `docs/viewer/molstar.js`, `molstar.css` — vendored [Mol\*](https://molstar.org/) build, so the folder also works opened from disk
 
 ### Data files
 
@@ -88,6 +100,7 @@ My local information (directories, usernames, etc.) is protected through use of 
 * `cyp3a4_challenge_vs_pdb.csv` — comparison of PDB ligands to the current OpenADMET challenge set
 * `cyp_challenge_compound.csv` — OpenADMET challenge compounds
 * `openadmet20_query_cyp3A4_githubsafe.json` — example JSON file for running OF3
+* `structures_unblinded/` — the 20 experimental structures released after the competition closed, as individual `.pdb` files and as a zip
 
 ### Auxiliary files
 
