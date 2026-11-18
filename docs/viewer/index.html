@@ -18,7 +18,9 @@
   header select { font: inherit; padding: 2px 4px; }
   #status { color: var(--muted); font-style: italic; }
   main { flex: 1; display: flex; min-height: 0; }
-  #side { width: 760px; max-width: 54vw; display: flex; flex-direction: column; border-right: 2px solid var(--line); min-height: 0; }
+  #side { width: 900px; flex: none; display: flex; flex-direction: column; border-right: 0; min-height: 0; }
+  #drag { flex: none; width: 6px; background: var(--line); cursor: col-resize; }
+  #drag:hover, #drag.on { background: #8fa8c8; }
   .bar { padding: 8px 6px; border-bottom: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 6px 8px; align-items: center; }
   button { font: inherit; padding: 4px 10px; background: #fff; border: 1px solid #b9b9b9; border-radius: 3px; cursor: pointer; }
   button:hover { background: #f2f2f2; }
@@ -49,6 +51,7 @@
   @media (max-width: 760px) {
     main { flex-direction: column-reverse; }
     #side { width: 100%; max-width: none; border-right: 0; border-top: 2px solid var(--line); height: 48%; }
+    #drag { display: none; }
     #viewer { height: 52%; flex: none; }
   }
 </style>
@@ -84,6 +87,7 @@
     <div class="note" id="note"></div>
     <div class="note" style="border-top:0; padding-top:0; color:#1a1a1a;">Interested in deploying this approach? Contact me via: <a href="https://consultingbiochemist.com/" target="_blank" rel="noopener" style="color:#1a5fb4; font-weight:600; text-decoration:none;">The Consulting Biochemist ↗</a></div>
   </section>
+  <div id="drag" title="Drag to resize · double-click to reset"></div>
   <section id="viewer"><div id="app"></div></section>
 </main>
 
@@ -391,6 +395,33 @@
     const h = decodeURIComponent(location.hash.slice(1));
     if (h !== current && SUBS.some(s => s.label === h)) openSubmission(h);
   });
+  // ---- resizable data panel ------------------------------------------------
+  const side = document.getElementById('side'), dragEl = document.getElementById('drag');
+  const WKEY = 'cyp.sideWidth', DEFW = 900;
+  const setW = w => { side.style.width = Math.min(Math.max(w, 320), window.innerWidth - 300) + 'px'; };
+  try { const w = +localStorage.getItem(WKEY); if (w) setW(w); } catch (e) {}
+  dragEl.addEventListener('pointerdown', e => {
+    e.preventDefault();
+    dragEl.classList.add('on');
+    dragEl.setPointerCapture(e.pointerId);
+    const x0 = e.clientX, w0 = side.getBoundingClientRect().width;
+    const move = ev => setW(w0 + ev.clientX - x0);
+    const up = () => {
+      dragEl.classList.remove('on');
+      dragEl.removeEventListener('pointermove', move);
+      dragEl.removeEventListener('pointerup', up);
+      try { localStorage.setItem(WKEY, parseInt(side.style.width, 10)); } catch (e) {}
+      if (plugin) try { plugin.canvas3d.handleResize(); } catch (e) {}
+    };
+    dragEl.addEventListener('pointermove', move);
+    dragEl.addEventListener('pointerup', up);
+  });
+  dragEl.addEventListener('dblclick', () => {
+    setW(DEFW);
+    try { localStorage.removeItem(WKEY); } catch (e) {}
+    if (plugin) try { plugin.canvas3d.handleResize(); } catch (e) {}
+  });
+
   openSubmission(start);
   molstar.Viewer.create('app', {
     layoutIsExpanded: false, layoutShowControls: false, layoutShowRemoteState: false,
