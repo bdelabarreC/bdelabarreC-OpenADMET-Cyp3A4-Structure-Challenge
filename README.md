@@ -75,11 +75,11 @@ My local information (directories, usernames, etc.) is protected through use of 
 * `structure_prediction_submit.ipynb` — run final check and send submission to OpenADMET via API
 * `pose_in_pocket_check.ipynb` — make sure the co-folder didn't place the small molecule outside of the defined pocket
 * `classify_heme_binders.py` — automated sorter to identify heme-Fe binder motifs from SMILES codes
-* `cofolder_processer.py` — module used by `cyp_suite_driver_v2.ipynb`. Can be generalized to any co-folding output.
+* `cofolder_processor.py` — module used by `cyp_suite_driver_v2.ipynb`. Can be generalized to any co-folding output.
 * `OpenMM_environmentcheck.py` — ensure that required modules for OpenMM are present in a conda environment
 * `validation.py` — presubmission validation, required by `structure_prediction_submit.ipynb` (created by the OpenADMET team)
 * `submit_when_open.py` — sleep-saving utility for the competition: make a timed submission to OpenADMET with the latest prediction
-* `cyp_suite_configuration.md` — configuration reference for `cyp_suite`: the `RunConfig` fields that control every stage, plus the entry points
+* `cyp_suite_configuration.md` — configuration reference for `cofolder_processor`: the `RunConfig` fields that control every stage, plus the entry points
 * `run_openfold_githubsafe.txt` — the OpenFold3 prediction command I run, with local paths stripped out. Includes notes on the diffusion-sample count that fits in 16 GB of vRAM.
 
 ### Viewer

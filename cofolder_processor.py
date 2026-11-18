@@ -1,5 +1,5 @@
 """
-cyp_suite -- post-prediction pipeline for co-folded CYP3A4 complexes.
+cofolder_processor -- post-prediction pipeline for co-folded CYP3A4 complexes.
 (c) Byron DeLaBarre / The Consulting Biochemist 2026
 One config, five stages, each a function of (config) -> manifest CSV:
 
@@ -16,9 +16,9 @@ everything else in `openmm`. Every heavy import is therefore INSIDE its
 stage function, so this module imports cleanly in either environment.
 
     # in the openmm env
-    python cyp_suite.py --config run.json --stage convert refine validate select
+    python cofolder_processor.py --config run.json --stage convert refine validate select
     # in the orbmol env (or let the driver shell out)
-    python cyp_suite.py --config run.json --stage score
+    python cofolder_processor.py --config run.json --stage score
 
 Paths derive from ONE root plus the run name. Nothing is read from the
 environment except as defaults when a config is created.

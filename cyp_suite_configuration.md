@@ -1,12 +1,12 @@
-# `cyp_suite` configuration reference
+# `cofolder_processor` configuration reference
 
-Every stage in `cyp_suite` takes a single `RunConfig`. There are no other
+Every stage in `cofolder_processor` takes a single `RunConfig`. There are no other
 arguments that change what gets computed — the stage functions accept only
 execution controls (resume, restrict, limit). So this document is mostly a
 reference for `RunConfig` fields, followed by the entry points.
 
 ```python
-import cyp_suite as cs
+import cofolder_processor as cs
 
 cfg = cs.RunConfig.from_env(
     run_name   = "esmfold2_cyp3a4_run9",
